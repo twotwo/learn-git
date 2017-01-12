@@ -1,17 +1,39 @@
-* 使用svn用的好好的，为什么要用git？
-* git有哪些优势？又有哪些劣势？
-* 在日常使用中两者明显的差异是什么？
+* Git 是啥？ 
+* 相比 SVN 有什么不同 ？
+* 使用 SVN 用的好好的，为什么要用 Git ？
 
-## 参考
-- [Why is Git better than Subversion?](http://stackoverflow.com/questions/871/why-is-git-better-than-subversion)  stackoverflow 上关于svn和git的区别的讨论，说的很详细。
-- [What are the differences between SVN and Git? ](https://help.github.com/articles/what-are-the-differences-between-svn-and-git/)  github 上通过版本库结构、历史、子项目（submudle）的不同来对比两者。
-- [蒋鑫：为什么 Git 比 SVN 好？](http://www.worldhello.net/2012/04/12/why-git-is-better-than-svn.html "蒋鑫 - Why `Git` is better than `SVN`")
 
-## 去中心化带来的巨大变化
+## First, what is Git ?
+
+Git is a free and open source  distributed version control system (SCM) created by Linus Torvalds in 2005 ( Linux OS founder). It is designed to manage everything for small or very large projects with speed and efficiency. Majors organisations like Google, Facebook, Microsoft uses Git daily.
+
+## Git 与 SVN 的不同之处
+
+### 去中心化带来的巨大变化
+
+- 引入本地版本库
+
+本地开发版本+远端版本库 vs 本地开发版本+本地版本库+远端版本库
+
+- 结构复杂度 + 1， 带来 概念、命令 复杂度增加
+
+- 降低了对远端版本库的依赖，增强了版本管理的可扩展性和性能
+
+### 基于对象方式的管理
+
+- 先进的内容寻址文件系统，所有的历史信息都以对象形式存在本地版本库中
+
+参考 [Git 内部原理](https://git-scm.com/book/zh/v2/Git-内部原理-底层命令和高层命令)
+
+- 工作目录下只存放当前的版本，干净！
+
+### 一目了然的暂存区(Index)
+
+查看即将提交的内容、进行部分提交等
 
 ## Git 相比 SVN 的一些优势
 
-![git vs svn](images/why-git.png)
+![Git vs SVN](images/why-git.png)
 
 :point_right: *素材主要来自 [@oldratlee](https://github.com/oldratlee) 的 [repo](https://github.com/oldratlee/software-practice-miscellany/blob/master/git/README.md)*
 
@@ -72,10 +94,10 @@ OMG～ :confounded:～～
 
 别忘了，如果你的项目是开源的，全球的人可以给你提交，可没有办法向全球的同学广播 :kissing:
 
-#### :beer: 一等公民支持`tag`
+#### :beer: 原生支持`tag`
 
 - `svn`在模型上是没有分支和`tag`的。`tag`是通过目录权限限制（对开发只读）来保证不变。
-- `git`模型上一等公民支持`tag`，保证只读。
+- `git`从模型上就支持`tag`，保证只读。
 
 内心是不是有强烈的安全感？ :sparkles:
 
@@ -103,7 +125,7 @@ OMG～ :confounded:～～
 
 - `git`提交是个本地操作，相对`svn`闪电一般。
 - `git`提供了暂存区，可以方便指定提交内容，而不是全部。  
-PS： `git`可以只提交一个文件修改的一部分而非全部（`git add –p`），使用相对繁琐些。（实际上开发中我很少这么做 :grin:）
+PS： `git`可以只提交一个文件修改的一部分而非全部（`Git add –p`），使用相对繁琐些。（实际上开发中我很少这么做 :grin:）
 
 这让开发者更愿意整理提交，让每个提交更内聚自包含。进而有利于
 
@@ -121,4 +143,12 @@ PS： `git`可以只提交一个文件修改的一部分而非全部（`git add 
 
 #### :beer: 存储
 
-git的存储空间约为SVN的1/30
+Git 版本库所需的存储空间约为 SVN 的1/30
+
+
+
+## 参考内容
+- [Why is Git better than Subversion?](http://stackoverflow.com/questions/871/why-is-git-better-than-subversion)  stackoverflow 上关于svn和git的区别的讨论，靠前的帖子推荐都细读一下
+- [What are the differences between SVN and Git? ](https://help.github.com/articles/what-are-the-differences-between-subversion-and-git/)  github 上通过版本库结构、历史、子项目（submudle）的不同来对比两者
+- [Git Svn Comparison](https://git.wiki.kernel.org/index.php/GitSvnComparsion) 最权威的Git SVN 对比说明
+- [蒋鑫：为什么 Git 比 SVN 好？](http://www.worldhello.net/2012/04/12/why-git-is-better-than-svn.html) 对 Git 的误解和两者的使用场景
