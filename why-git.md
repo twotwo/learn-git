@@ -1,22 +1,22 @@
-使用svn用的好好的，为什么要用git？git有哪些优势？又有哪些劣势？在日常使用中两者明显的差异是什么？
+* 使用svn用的好好的，为什么要用git？
+* git有哪些优势？又有哪些劣势？
+* 在日常使用中两者明显的差异是什么？
 
-（关于 svn 的使用，一起来回顾一下 [How To Use Svn in Daily Work](using-svn.md)）
-
+## 参考
 - [Why is Git better than Subversion?](http://stackoverflow.com/questions/871/why-is-git-better-than-subversion)  stackoverflow 上关于svn和git的区别的讨论，说的很详细。
 - [What are the differences between SVN and Git? ](https://help.github.com/articles/what-are-the-differences-between-svn-and-git/)  github 上通过版本库结构、历史、子项目（submudle）的不同来对比两者。
 - [蒋鑫：为什么 Git 比 SVN 好？](http://www.worldhello.net/2012/04/12/why-git-is-better-than-svn.html "蒋鑫 - Why `Git` is better than `SVN`")
 
-以下内容出自 [@oldratlee](https://github.com/oldratlee) 的 [repo](https://github.com/oldratlee/software-practice-miscellany/blob/master/git/README.md)。
+## 去中心化带来的巨大变化
 
-SVN 和 Git 在日常使用中的明显差异
-=========================
+## Git 相比 SVN 的一些优势
 
-![git vs svn](http://static.ixirong.com/pic/mygit/why-git.png)
+![git vs svn](images/why-git.png)
 
-:point_right: 自己在使用`git`过程中相对`svn`的感受强烈的变化。
+:point_right: *素材主要来自 [@oldratlee](https://github.com/oldratlee) 的 [repo](https://github.com/oldratlee/software-practice-miscellany/blob/master/git/README.md)*
 
-:beer: 合并对提交过程的保留
--------------------
+### 1. 历史记录更清晰完整
+#### :beer: 合并对提交过程的保留
 
 - `git`：合并操作保留原有的提交过程（即保留了合并来源的作者、提交次数、分离提交的内容）。
 - `svn`：合并操作把来源多个提交合并成了一个合并提交，即在提交历史中Crash了自然的提交过程。
@@ -29,8 +29,7 @@ SVN 和 Git 在日常使用中的明显差异
 1. 极大方便查出那行提交是什么时间、谁做出的。  
 `svn`因为合并Crash了自然的提交过程，要追踪很痛苦。
 
-:beer: 修正提交
--------------------
+#### :beer: 可以修正错误的提交
 
 - `git`：可以修正提交。  
 使用功能分支工作流，在自己的分支可以方便修正提交而不会影响大家。
@@ -43,8 +42,10 @@ SVN 和 Git 在日常使用中的明显差异
 
 另外对于想了解演进过程的同学，垃圾提交影响了了解效果。
 
-:beer: 廉价好用的本地分支
--------------------
+### 2. 对协作开发支持更强
+协作开发、版本发布更方便，周边系统支持更完备
+
+#### :beer: 廉价好用的本地分支
 
 - `git`：有本地分支
 - `svn`：无本地分支
@@ -53,8 +54,7 @@ SVN 和 Git 在日常使用中的明显差异
 
 可以从想要工作点闪电般创建本地分支，本地实验不确定的修改，创建分支如此之廉价，`git`推荐创建分支来隔离修改。
 
-:beer: 更强大智能的合并能力
-----------------
+#### :beer: 更强大智能的合并能力
 
 - `git`：重命名（无论文件还有目录）提交 可以合并上 文件重命名前的这些文件的提交。
 - `svn`：重命名（无论文件还有目录）提交后，你本地/或是分支上 有文件重命名前的这些文件的修改或提交，在做合并操作时，恭喜:see_no_evil:，你会碰上传说中难搞的***树冲突***！
@@ -72,16 +72,15 @@ OMG～ :confounded:～～
 
 别忘了，如果你的项目是开源的，全球的人可以给你提交，可没有办法向全球的同学广播 :kissing:
 
-:beer: 一等公民支持`tag`
--------------------
+#### :beer: 一等公民支持`tag`
 
 - `svn`在模型上是没有分支和`tag`的。`tag`是通过目录权限限制（对开发只读）来保证不变。
 - `git`模型上一等公民支持`tag`，保证只读。
 
 内心是不是有强烈的安全感？ :sparkles:
 
-:beer: 完整配套的开发过程设施
--------------------
+
+#### :beer: 完整配套的开发过程设施
 
 与`git`配套的`github`、`gitlab`（我们公司搭建了）提供了：
 
@@ -98,10 +97,9 @@ OMG～ :confounded:～～
 一切不为 目标代码 服务 的东东都是 **流氓**！  
 \# 是不是想到很多东西（比如下压式的排期计划）会觉得自己是生效的产出，好像剩下的事就是 码农搬砖一样把代码码好。
 
-:beer: 热操作有闪电般的速度
--------------------
+### 3. 性能更优
 
-### 提交
+#### :beer: 提交
 
 - `git`提交是个本地操作，相对`svn`闪电一般。
 - `git`提供了暂存区，可以方便指定提交内容，而不是全部。  
@@ -112,7 +110,7 @@ PS： `git`可以只提交一个文件修改的一部分而非全部（`git add 
 - `Code Review`
 - 线上`Bug`的快速准确的回滚式修复
 
-### 查看日志
+#### :beer: 查看日志
 
 查看日志是个频繁的操作。
 
@@ -120,3 +118,7 @@ PS： `git`可以只提交一个文件修改的一部分而非全部（`git add 
 - `svn`：需要从服务拉取。
 
 一旦用了`git`后，等待`svn`日志（包括查看2个版本间的`diff`）过程简直让我发狂。
+
+#### :beer: 存储
+
+git的存储空间约为SVN的1/30
