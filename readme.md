@@ -8,13 +8,13 @@ Git团队培训与实践材料，基于Git的协作开发
 
 ## Git 基础
 
-- [Why Git](why-git.md) 为什么开始使用 Git 版本管理，Git VS Svn 有哪些区别？
-- [Pro Git v2 中文版](https://git-scm.com/book/zh/v2) Git 学习参考权威
+- [Why Git](why-git.md) Git 是什么？ 相比 SVN 有哪些不同？ 为啥要用 Git 替换 SVN ？
+- [Pro Git v2 中文版](https://git-scm.com/book/zh/v2) Git 学习参考权威，可以慢慢啃
 
 ### 入门
 - [工具篇](git-tools.md) Git协作开发使用到的工具、服务总结
-- [入门篇](primer.md) 从config、init/clone、commit到push、pull的一个基本流程
-- [使用篇](git-process.md) Git 日常使用，包含branch
+- [入门篇](primer.md) 从config、init/clone、commit到push、pull的最简化流程(不推荐用在协作开发中)
+- [使用篇](git-process.md) Git 协作开发工作流程，包含 分支、合并、打标签等操作
 
 ### 规范
 - [提交信息书写规则](git-commit.md) Git协作开发使用到的工具、服务总结

@@ -26,7 +26,9 @@
 ### 账号配置
 参考1 [初次运行 Git 的配置](https://git-scm.com/book/zh/v2/起步-初次运行-Git-前的配置)
 
-参考2 [git 设置和取消代理](https://gist.github.com/laispace/666dd7b27e9116faece6)
+参考2 [Git 设置和取消代理](https://gist.github.com/laispace/666dd7b27e9116faece6)
+
+参考3 [Git 设置编辑器](https://help.github.com/articles/associating-text-editors-with-git/)
 
 #### git config
 	$ git help config
@@ -38,6 +40,10 @@
 	### Set/Unset Your Proxy: http&https
 	$ git config --global http.proxy 'socks5://127.0.0.1:1080'
 	$ git config --global --unset http.proxy
+
+	### Use Sublime as Your Editor
+	$ ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" ~/app/bin/
+	$ git config --global core.editor "subl -n -w"
 
 
 ### 获取与创建项目
