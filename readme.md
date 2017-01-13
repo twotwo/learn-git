@@ -14,11 +14,11 @@ Git团队培训与实践材料，基于Git的协作开发
 ### 入门
 - [工具篇](git-tools.md) Git协作开发使用到的工具、服务总结
 - [入门篇](primer.md) 从config、init/clone、commit到push、pull的最简化流程(不推荐用在协作开发中)
-- [使用篇](git-process.md) Git 协作开发工作流程，包含 分支、合并、打标签等操作
+- [分支篇](git-branch.md) Git 分支模型介绍，以及一个包含分支、合并等操作的例子
 
 ### 规范
 - [提交信息书写规则](git-commit.md) Git协作开发使用到的工具、服务总结
-- [Git 分支管理](git-branch.md) Git 分支开发模型
+- [流程篇](git-process.md) Git 开发流程总结
 
 ## 基于 Git 的协作开发实践
 
