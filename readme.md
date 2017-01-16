@@ -12,9 +12,9 @@ Git团队培训与实践材料，基于Git的协作开发
 - [Pro Git v2 中文版](https://git-scm.com/book/zh/v2) Git 学习参考权威，可以慢慢啃
 
 ### 入门
-- [工具篇](git-tools.md) Git协作开发使用到的工具、服务总结
-- [入门篇](primer.md) 从config、init/clone、commit到push、pull的最简化流程(不推荐用在协作开发中)
-- [分支篇](git-branch.md) Git 分支模型介绍，以及一个包含分支、合并等操作的例子
+- [工具篇](git-tools.md) Git 协作开发使用到的工具、服务总结
+- [入门篇](git-primer.md) Git 基础知识介绍，及一个 **集中式工作流程** 的例子
+- [分支篇](git-branch.md) Git 分支模型介绍，及一个 **功能分支工作流** 的例子
 
 ### 规范
 - [提交信息书写规则](git-commit.md) Git协作开发使用到的工具、服务总结
@@ -24,10 +24,17 @@ Git团队培训与实践材料，基于Git的协作开发
 
 ### 工作流实践
 - [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/) 介绍日常推荐的分支开发模型，基于此模型可以通过这个小游戏来进行学习 [Learn Git Branch](http://pcottle.github.io/learnGitBranching/)
-- [Git工作流指南](https://github.com/xirong/my-git/blob/master/git-workflow-tutorial.md)完整的对比目前使用的集中式（Svn）工作流、功能分支工作流、Gitflow 工作流、Forking 工作流、Pull Request 等几种不同的模式，通俗易懂，强烈推荐看一看，如果觉的排版不好，请查看原分页文章 [Git-workflow-translations](https://github.com/oldratlee/translations/tree/master/git-workflows-and-tutorials)
+- [Git工作流指南](https://github.com/oldratlee/translations/tree/master/git-workflows-and-tutorials)
+
+	* 集中式工作流： SVN 方式
+	* 功能分支工作流
+	* Gitflow 工作流： 经典模型，体现了工作流的经验和精髓
+	* Forking 工作流： GitHub风格
+	* Pull Request 工作流： Bitbucket代码托管服务使用的方式，和GitHub基本一样
+
+[Git-workflow-translations](https://github.com/oldratlee/translations/tree/master/git-workflows-and-tutorials)
 - 熟悉的工作流后，你是否也想要在 Github 上与他人一起协同工作？那么问题来了，[Github全程指南-如何高效使用？](how-to-use-github.md)
 - [Understanding the GitHub Flow](https://guides.github.com/introduction/flow/index.html) This guide explains how and why GitHub Flow works 简单实用，更好的理解Github的模式。
-- [Github 协同开发流程](http://www.ruanyifeng.com/blog/2015/08/git-use-process.html) 图片很赞，简洁易懂。
 - [How to undo (almost) anything with Git](https://github.com/blog/2019-how-to-undo-almost-anything-with-git) 撤销一切，汇总各种回滚撤销的场景
 
 ## 基于 Gerrit 的代码评审实践

@@ -1,12 +1,25 @@
 # Git 分支篇
 
+- `Git Branching` Git 分支模型介绍
+- `Feature Branch` 功能分支工作流
+- 一个例子 
+
+## Git Branching
 Git 的分支模型是一个“Killing Feature”，它以一种难以置信的轻量方式处理分支，因此，鼓励在工作流程中频繁地使用分支与合并。
 理解和精通这一特性，你便会意识到 Git 是如此的强大而又独特，并且从此真正改变你的开发方式。
 
-## 需要掌握的概念
 - ☞ 为啥建分支这么快？ **分支本质上就是一个41字节的文件**
 - ☞ 为啥合并这么快？ **三方合并机制**
 - ☞ **本地的分支合并操作与远端的分支管理**
+
+## Feature Branch
+`功能分支工作流`仍然基于中央仓库，并且master分支还是代表了正式项目的历史。 但不是直接提交本地历史到各自的本地master分支，开发者每次在开始新功能前先创建一个新分支。 功能分支应该有个有描述性的名字，比如animated-menu-items或issue-#1061，这样可以让分支有个清楚且高聚焦的用途。
+
+在master分支和功能分支之间，Git是没有技术上的区别，所以开发者可以用和集中式工作流中完全一样的方式编辑、暂存和提交修改到功能分支上。
+
+另外，功能分支也可以 push 到中央仓库中。这样不修改正式代码就可以和其它开发者分享提交的功能。
+由于master是仅有的一个『特殊』分支，在中央仓库上存多个功能分支不会有任何问题。
+当然，这样做也可以很方便地备份各自的本地提交。
 
 ## Command List
 
@@ -16,8 +29,7 @@ Git 的分支模型是一个“Killing Feature”，它以一种难以置信的�
 
 ### git checkout - 切换分支
 
-	☞ 'git checkout' is used to switch branches
-	☞ 'git checkout -b' is used to create and then switch branches
+
 
 ### git fetch - 抓取远程仓库内容，放入本地库
 
@@ -35,21 +47,21 @@ Git 的分支模型是一个“Killing Feature”，它以一种难以置信的�
 
 ## 举个例子
 
-以learn-git为操作环境，看一个简单的分支新建与分支合并的例子。我采用的工作流程是：
+在learn-git的编写中，采用功能分支工作流，我的预期是(Step 1 ~ 6)：
 
 	- 以master为主干，与线上发布版本同步
-	- 为实现某个新的需求，创建一个分支 (Step 1, checkout -b the_new_req)
-	- 然后在这个分支上开展工作，完成后再合并到主干
+	- 创建一个分支来开发新需求 (Step 1, checkout -b dev-li3huo)
+	- 然后在这个分支上开展工作，完成后再合并到主干(Step 2 ~ 6, commit & pull)
 
-正在此时，突然发现线上内容需要紧急修补。这时将按照如下方式来处理：
+在初版内容发布后，我在同步进行着修订。此时有朋友反馈意见，线上内容需要紧急修补。我将按照如下方式来处理：
 
-	- 切换到你的线上分支（Step 2, checkout master）: 保存工作状态
-	- 为这个紧急任务新建一个分支(Step 3, checkout -b hotfix)，并在其中修复它
-	- 在测试通过之后，切换回线上分支，然后合并这个修补分支，最后将改动推送到线上分支
-	- 切换回你最初工作的分支上，继续工作
+	- 保存当前工作状态，然后切换回主分支（Step 3, checkout master）
+	- 为紧急修复任务新建一个分支(Step 4, checkout -b hotfix)，并在其中修复它
+	- 在测试通过之后，切换回线上分支，然后合并这个修补分支，最后将改动推送到线上分支(Step 5, checkout -b hotfix)
+	- 切换回你最初工作的分支上，继续工作(Step 1, checkout dev-li3huo)
 
 
-### Step 1：建一个分支来开发新需求
+### Step 1：创建一个分支来开发新需求
 首先，每次开发新功能，都应该新建一个单独的分支
 
 	# 获取主干最新代码
@@ -63,6 +75,11 @@ Git 的分支模型是一个“Killing Feature”，它以一种难以置信的�
 	➜  learn-git git:(master) git checkout -b dev-li3huo
 	Switched to a new branch 'dev-li3huo'
 	➜  learn-git git:(dev-li3huo) 
+
+	☞ 'git checkout' is used to switch branches
+	☞ 'git pull' update for the repository cloned from, 
+		   then merge one of them into current branch
+	☞ 'git checkout -b' is used to create and then switch branches
 
 ### 第二步：提交分支commit
 分支修改后，就可以提交commit了
@@ -173,4 +190,5 @@ git push命令要加上force参数，因为rebase以后，分支历史改变了�
 		- `变基的风险` 不要对在你的仓库外有副本的分支执行变基
 		- `变基 vs. 合并` 总的原则是，只对尚未推送或分享给别人的本地修改执行变基操作清理历史，从不对已推送至别处的提交执行变基操作，这样，你才能享受到两种方式带来的便利
 
-- [Github 跨 Repository 开发流程](http://www.ruanyifeng.com/blog/2015/08/git-use-process.html) @阮一峰 2015年8月5日 没有远端版本库权限的一个开发流程
+- [功能分支工作流 by Git](https://github.com/oldratlee/translations/blob/master/git-workflows-and-tutorials/workflow-feature-branch.md)
+- [Github 跨 Repository 开发流程](http://www.ruanyifeng.com/blog/2015/08/git-use-process.html) @阮一峰 2015年8月5日 Gitflow 工作流
