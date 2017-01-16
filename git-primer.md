@@ -1,6 +1,6 @@
 # Git 入门篇
-- Git Overview 概览，介绍最需要理解的基本概念
-- Git Actions 从config、init/clone、commit到push、pull，介绍使用 Git 需要掌握的基本命令
+- `Git Overview` 概览，介绍 Git 的一些基本概念
+- `Centralized Workflow` 一个用集中式工作流程工作的例子，从config、init/clone、commit到push、pull，介绍在使用 Git 中需要掌握的命令
 
 ## Git Overview
 
@@ -20,7 +20,7 @@
 * 已修改（modified） 文件中的数据相对Repository已经发生了变化
 * 已暂存（staged）   对一个已修改文件的当前版本做了标记，使之包含在下次提交的快照中
 
-## Git Actions
+## Centralized Workflow
 ![Git Actions](images/git_actions.jpg)
 
 ### 账号配置
@@ -93,4 +93,5 @@
 
 
 ### 参考
-* [一个初始化、提交和同步的例子](http://wiki.eclipse.org/EGit/Git_For_Eclipse_Users#Worked_example) 基于命令行
+* [一个初始化、提交和同步的例子](http://wiki.eclipse.org/EGit/Git_For_Eclipse_Users#Worked_example) 
+* [集中式工作流 by Git](https://github.com/oldratlee/translations/blob/master/git-workflows-and-tutorials/workflow-centralized.md)
