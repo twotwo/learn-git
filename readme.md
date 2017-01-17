@@ -33,7 +33,7 @@ Git 培训材料，培养团队掌握基于 Git 的协作开发技能，规范�
 
 ## 参考资料
 - [有关 git 的学习资料](https://github.com/xirong/my-git) @xirong 整理的 Git 资源的汇总
-- [软件实践杂记](https://github.com/oldratlee/software-practice-miscellany) @李鼎(哲良) 整理的SCM相关内容
+- [软件实践杂记](https://github.com/oldratlee/software-practice-miscellany) @oldratlee 李鼎(哲良) 整理的SCM相关内容
 - [git-recipes](https://github.com/geeeeeeeeek/git-recipes/wiki) @童仲毅 整理翻译的一些优秀文章
 - [Git-flight-rules](https://github.com/k88hudson/git-flight-rules) 一些日常使用中的场景，比如提交错了分支、提交时的用户名邮箱不对、丢弃某些提交、未提交的代码直接提交到另外一个分支等等，很实用
 

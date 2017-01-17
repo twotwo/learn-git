@@ -20,6 +20,10 @@
 * 已修改（modified） 文件中的数据相对Repository已经发生了变化
 * 已暂存（staged）   对一个已修改文件的当前版本做了标记，使之包含在下次提交的快照中
 
+![File Lifecycle](images/file_lifecycle.png)
+
+文件的状态变化周期说明
+
 ## Centralized Workflow
 ![Git Actions](images/git_actions.jpg)
 
