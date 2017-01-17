@@ -53,11 +53,12 @@ Git 的分支模型是一个“Killing Feature”，它以一种难以置信的�
 	- 创建一个分支来开发新需求 (Step 1, checkout -b dev-li3huo)
 	- 然后在这个分支上开展工作，完成后再合并到主干(Step 2 ~ 6, commit & pull)
 
-在初版内容发布后，我在同步进行着修订。此时有朋友反馈意见，线上内容需要紧急修补。我将按照如下方式来处理：
+在初版内容发布后，我在同步进行着修订。此时有朋友反馈意见，线上内容需要紧急修补。
+为了应对这种：
 
-	- 保存当前工作状态，然后切换回主分支（Step 3, checkout master）
-	- 为紧急修复任务新建一个分支(Step 4, checkout -b hotfix)，并在其中修复它
-	- 在测试通过之后，切换回线上分支，然后合并这个修补分支，最后将改动推送到线上分支(Step 5, checkout -b hotfix)
+	- 保存当前工作状态，然后切换回主分支（Step 7, checkout master）
+	- 为紧急修复任务新建一个分支(Step 8, checkout -b hotfix)，并在其中修复它
+	- 在测试通过之后，切换回线上分支，然后合并这个修补分支，最后将改动推送到线上分支(Step 9, checkout -b hotfix)
 	- 切换回你最初工作的分支上，继续工作(Step 1, checkout dev-li3huo)
 
 
