@@ -210,4 +210,3 @@ git push命令要加上force参数，因为rebase以后，分支历史改变了�
 		- `变基 vs. 合并` 总的原则是，只对尚未推送或分享给别人的本地修改执行变基操作清理历史，从不对已推送至别处的提交执行变基操作，这样，你才能享受到两种方式带来的便利
 
 - [功能分支工作流 by Git](https://github.com/oldratlee/translations/blob/master/git-workflows-and-tutorials/workflow-feature-branch.md)
-- [Github 跨 Repository 开发流程](http://www.ruanyifeng.com/blog/2015/08/git-use-process.html) @阮一峰 2015年8月5日 Gitflow 工作流
