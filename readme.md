@@ -32,10 +32,10 @@ Git 培训材料，培养团队掌握基于 Git 的协作开发技能，规范�
 
 更全面的理解Git 工作流，推荐阅读[Comparing Workflows](https://www.atlassian.com/git/tutorials/comparing-workflows/) atlassian的 Git 工作流对比，这里还有@oldratlee 的[译文](https://github.com/oldratlee/translations/tree/master/git-workflows-and-tutorials)
 
-	* `Centralized Workflow` 集中式工作流，用和 SVN 类似的方式完成代码管理
-	* `Feature Branch Workflow` 功能分支工作流是 Git 的基础工作流，是企业项目工作流、开源项目工作流的核心子流程
-	* `Gitflow Workflow` Gitflow 工作流是 Git 应用中最经典的模型，体现了工作流的经验和精髓
-	* `Forking Workflow` Forking 工作流是 GitHub 的风格，开源项目的理想工作流，适用于松散组织的团队
+* `Centralized Workflow` **集中式工作流** ，用和 SVN 类似的方式完成代码管理
+* `Feature Branch Workflow` **功能分支工作流** 是 Git 的基础工作流，是企业项目工作流、开源项目工作流的核心子流程
+* `Gitflow Workflow` **Gitflow 工作流** 是 Git 应用中最经典的模型，体现了工作流的经验和精髓
+* `Forking Workflow` **Forking 工作流** 是 GitHub 的风格，开源项目的理想工作流，适用于松散组织的团队
 
 ## 3、基于 Gerrit 的代码评审实践
 代码评审相关
