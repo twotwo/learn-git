@@ -1,11 +1,11 @@
 # Gerrit 起步
 
-## 登录 Web 控制台
+## 1. 登录 Web 控制台
 [Gerrit Web Console](http://172.16.100.90/gerrit/) 已经集成了大家的jira账号，可以直接登录(Sign In)
 
 ![Gerrit Sign In](images/gerrit-sign-in.png)
 
-## 配置 SSH(HTTP) 访问认证 
+## 2. 配置 SSH(HTTP) 访问认证 
 
 进入[Settings](http://172.16.100.90/gerrit/#/settings/)界面
 
@@ -44,7 +44,9 @@ On Gerrit installations that do not support SSH authentication, the user must au
 
 	git clone http://it.feiliu.com/gerrit/a/sandbox/hello_world
 
-## 执行一下 `gerrit` 命令
+## 3. 执行一下 `gerrit` 命令
+
+配置好 `SSH Public Keys` 之后，我们就可以使用 Gerrit 提供的服务了
 
 	ssh -p29418 172.16.100.90 gerrit
 
@@ -52,7 +54,9 @@ On Gerrit installations that do not support SSH authentication, the user must au
 
 	alias gerrit="ssh -p29418 172.16.100.90 gerrit"
 
-## 在沙箱工程中提交评审内容
+## 4. 在沙箱工程中提交评审内容
+
+使用 Gerrit 和 使用其它 Git 服务基本一样，其中存在的细微差别我会着重强调
 
 ### Clone sandbox project
 
@@ -85,7 +89,7 @@ On Gerrit installations that do not support SSH authentication, the user must au
 
 ### Submit changes for review
 
-检查 Change-Id
+☞ 检查 Change-Id ， 这个增加的Change-Id字段是实现 Gerrit 代码评审功能所必须的。如果没有加入commit-msg钩子或不具备执行权限，将不生成此字段。这样commit的代码只能直接提交到主干，无法进行review
 
 	➜  hello_world git:(master) git log
 	commit 72f756d6c5ee1a37ab965a18dc20a071ef8535b9
@@ -121,8 +125,9 @@ On Gerrit installations that do not support SSH authentication, the user must au
 	To ssh://172.16.100.90:29418/sandbox/hello_world
 	 * [new branch]      HEAD -> refs/for/master
 
+## 5. 在 Web Console 中进行代码评审
 
-## Verify Changes
+### Verify Changes
 
 在 Web Console 的 [My Reviews](http://172.16.100.90/gerrit/#/dashboard/self) 的 Outgoing reviews 中，出现了这条提交信息
 
@@ -130,12 +135,12 @@ Review 这个版本与上个版本直接的不同
 
 ![Diff Files one by one](images/gerrit-review.png)
 
-## Submit the Change
+### Submit the Change
 
 在 Web Console 中， Code Review 进行打分，累计得分足够后确认提交。
 
 
-## 创建自己的代码库
+## 6. 创建自己的代码库
 
 为了更好的练习，我建议每个人都创建一个个人专用的 Gerrit 工程，即在远端生成一个 git 仓库
 
