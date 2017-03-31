@@ -140,7 +140,7 @@ Review 这个版本与上个版本直接的不同
 在 Web Console 中， Code Review 进行打分，累计得分足够后确认提交。
 
 
-## 6. 创建自己的代码库
+## 6. 在沙箱中练习
 
 为了更好的练习，我建议每个人都创建一个个人专用的 Gerrit 工程，即在远端生成一个 git 仓库
 
@@ -148,10 +148,12 @@ Review 这个版本与上个版本直接的不同
 
 然后，我们把这个工程 `clone` 到本地
 
-	➜  /tmp git clone ssh://liyan@172.16.100.90:29418/users/liyan && scp -p -P 29418 liyan@172.16.100.90:hooks/commit-msg liyan/.git/hooks/
-	Cloning into 'liyan'...
-	warning: remote HEAD refers to nonexistent ref, unable to checkout.
+	➜  /tmp git clone ssh://liyan@172.16.100.90:29418/sandbox/hello_world && scp -p -P 29418 liyan@172.16.100.90:hooks/commit-msg hello_world/.git/hooks/
+	Cloning into 'hello_world'...
+	remote: Counting objects: 3, done
+	remote: Finding sources: 100% (3/3)
+	remote: Total 3 (delta 0), reused 3 (delta 0)
+	Receiving objects: 100% (3/3), 380 bytes | 0 bytes/s, done.
+	commit-msg                                                          100% 4682     1.9MB/s   00:00 
 
-⚠️因为仓库是空的，所以有一个警告
-
-⚠️创建 Gerrit 工程要小心， 因为不提供工程删除的命令。
+⚠️请在这个项目里进行练习！
