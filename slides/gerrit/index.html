@@ -81,7 +81,7 @@
             </aside>
             
             <aside class="page_number">
-              1/4
+              1/11
             </aside>
           </footer>
         </div>
@@ -125,7 +125,7 @@
             </aside>
             
             <aside class="page_number">
-              2/4
+              2/11
             </aside>
           </footer>
         </div>
@@ -157,7 +157,7 @@
             </aside>
             
             <aside class="page_number">
-              3/4
+              3/11
             </aside>
           </footer>
         </div>
@@ -168,10 +168,246 @@
         <div class="slide slide-4">
           <div class="inner">
             
+            <header><h2>安装选项</h2></header>
+            
+            
+            <section><p>a. Adjusting your PATH environment: Use Git and optional Unix tools
+    <img alt="add-unix-tools-to-path" src="images/git-bash-add-unix-tools-to-path.png" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="windows.md">windows.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              4/11
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: windows.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-5">
+          <div class="inner">
+            
+            <header><h2>安装选项</h2></header>
+            
+            
+            <section><p>b. Configuring the line ending conversions: checkout as-is, commit Unix-style line endings
+    <img alt="checkout-and-commit-unix-style" src="images/git-bash-checkout-and-commit-unix-style.png" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="windows.md">windows.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              5/11
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: windows.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-6">
+          <div class="inner">
+            
+            <header><h2>安装选项</h2></header>
+            
+            
+            <section><p>c. Configuring the terminal emulator to use the Git Bash: Use Windows' default console window
+    <img alt="use-windows-console" src="images/git-bash-use-windows-console.png" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="windows.md">windows.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              6/11
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: windows.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-7">
+          <div class="inner">
+            
+            <header><h2>安装选项</h2></header>
+            
+            
+            <section><p>d. Configuring extra options: 
+    * Enable file system caching
+    * Enable Git Credential Manager
+    <img alt="extra-options" src="images/git-bash-extra-options.png" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="windows.md">windows.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              7/11
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: windows.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-8">
+          <div class="inner">
+            
+            <header><h2>配置</h2></header>
+            
+            
+            <section><p>a. 配置访问密钥对</p>
+<pre><code>$ ssh-keygen -q -t rsa -C "testtest@feiliu.com"
+Enter file in which to save the key (/c/Users/liyan/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+
+liyan@hummer MINGW32 ~/.ssh
+$ ll ~/.ssh/
+total 9
+-rw-r--r-- 1 liyan 197121 1679 Nov 24 17:10 id_rsa
+-rw-r--r-- 1 liyan 197121  401 Nov 24 17:10 id_rsa.pub
+-rw-r--r-- 1 liyan 197121  627 Jun 12  2014 known_hosts
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="windows.md">windows.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              8/11
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: windows.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-9">
+          <div class="inner">
+            
+            <header><h2>配置</h2></header>
+            
+            
+            <section><p>b. 获取访问用的公钥</p>
+<pre><code>$ cat ~/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDGIzTh6BKYWI1AjKeTvvsAQm/bxL6iJ9tFXiXnqjXx
+MGDIfno8JMi6CAX0IUC1tj7G1jNuQsmKi2E7P+Ql5SXHIJpboTk8UGqzVq62GOZTaZTV5oZ9TUgMyTv2
+n51jP0T7W9J+0R8g7zneQfFZtKZ0ryCDRCxweZNGFYWku96bBvBYDRiqG/3bbmAh3NRvWx5zKBv6ieat
+gjZpxNaVR0kwd2XX19rFTu4FFDE4RCuKQFlFUVM7uyhvDRWAsha87mitW2WD4xIKVcTzwOmBrGMPOKiv
+FfM3TzkUn0eTFOhJi0U6ynmH7uHAuVHhXWMGmbtWN9e8G8ba82beNPPtMugT testtest@feiliu.com
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="windows.md">windows.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              9/11
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: windows.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-10">
+          <div class="inner">
+            
+            <header><h2>配置</h2></header>
+            
+            
+            <section><p>c. 把控越配置到github后台
+    <img alt="github-new-sshkey" src="images/github-new-sshkey.png" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="windows.md">windows.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              10/11
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: windows.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-11">
+          <div class="inner">
+            
             <header><h2>git bash</h2></header>
             
             
-            <section><p>推荐<em>Git for Windows</em>是为了让大家也能windows的终端下书写命令行。</p>
+            <section><p>推荐<em>Git for Windows</em>是为了让大家能在windows的终端下书写命令行。</p>
 <p>这里有一篇参考文章<a href="http://www.cnblogs.com/zichi/p/4703999.html">初学git：用git bash往github push代码</a></p></section>
             
           </div>
@@ -188,7 +424,7 @@
             </aside>
             
             <aside class="page_number">
-              4/4
+              11/11
             </aside>
           </footer>
         </div>
@@ -219,8 +455,43 @@
         </tr>
         
         <tr id="toc-row-4" class="sub">
-          <th><a href="#slide4">git bash</a></th>
+          <th><a href="#slide4">安装选项</a></th>
           <td><a href="#slide4">4</a></td>
+        </tr>
+        
+        <tr id="toc-row-5" class="sub">
+          <th><a href="#slide5">安装选项</a></th>
+          <td><a href="#slide5">5</a></td>
+        </tr>
+        
+        <tr id="toc-row-6" class="sub">
+          <th><a href="#slide6">安装选项</a></th>
+          <td><a href="#slide6">6</a></td>
+        </tr>
+        
+        <tr id="toc-row-7" class="sub">
+          <th><a href="#slide7">安装选项</a></th>
+          <td><a href="#slide7">7</a></td>
+        </tr>
+        
+        <tr id="toc-row-8" class="sub">
+          <th><a href="#slide8">配置</a></th>
+          <td><a href="#slide8">8</a></td>
+        </tr>
+        
+        <tr id="toc-row-9" class="sub">
+          <th><a href="#slide9">配置</a></th>
+          <td><a href="#slide9">9</a></td>
+        </tr>
+        
+        <tr id="toc-row-10" class="sub">
+          <th><a href="#slide10">配置</a></th>
+          <td><a href="#slide10">10</a></td>
+        </tr>
+        
+        <tr id="toc-row-11" class="sub">
+          <th><a href="#slide11">git bash</a></th>
+          <td><a href="#slide11">11</a></td>
         </tr>
         
       

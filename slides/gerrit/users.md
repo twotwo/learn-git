@@ -105,7 +105,7 @@ HTTP Digest Authentication Removed at 2.14
 
 配置好 `SSH Public Keys` 之后，我们就可以使用 Gerrit 提供的服务了
 
-	ssh -p29418 172.16.100.90 gerrit
+	ssh -p29418 172.16.100.130 gerrit
 
 可以看到这个命令的使用提示信息。为了减少输入，我设置了一个别名
 
