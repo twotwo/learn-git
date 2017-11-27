@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<!--
+  Copyright 2010 Google Inc.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+  Original slides: Marcin Wichary (mwichary@google.com)
+  Modifications: Ernest Delgado (ernestd@google.com)
+                 Alex Russell (slightlyoff@chromium.org)
+
+  landslide modifications: Adam Zapletal (adamzap@gmail.com)
+                           Nicolas Perriault (nperriault@gmail.com)
+-->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Gerrit 使用入门</title>
+    <!-- Styles -->
+    
+    <link rel="stylesheet" media="print" href="theme/css/print.css">
+    <link rel="stylesheet" media="screen, projection" href="theme/css/screen.css">
+    
+    
+    <!-- /Styles -->
+    <!-- Javascripts -->
+    
+    <script type="text/javascript" src="theme/js/slides.js"></script>
+    
+    
+    
+    <!-- /Javascripts -->
+</head>
+<body>
+  <div id="blank"></div>
+  <div class="presentation">
+    <div id="current_presenter_notes">
+      <div id="presenter_note"></div>
+    </div>
+    <div class="slides">
+      
+      <!-- slide source: gerrit.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_notes slide-1">
+          <div class="inner">
+            
+            <header><h1>Gerrit 使用入门</h1></header>
+            
+            
+            <section><p class="notes">Generate HTML5 slideshows by landslide</p>
+<!-- landslide gerrit.md --relative --copy-theme -d gerrit.html -->
+
+<ul>
+<li>V1.0</li>
+<li>liyan 2017-11-15</li>
+</ul>
+<p>Back to <a href="./index.html">Git 协作开发上手指南</a></p>
+<h2>1. Gerrit 是什么</h2>
+<h2>2. Gerrit 怎么用</h2></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="gerrit.md">gerrit.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              1/16
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: gerrit.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-2">
+          <div class="inner">
+            
+            <header><h2>1. Gerrit 简介</h2></header>
+            
+            
+            <section><p>Gerrit 是一个用 Java 写的开源软件：</p>
+<ul>
+<li>首先，Gerrit 提供了具备访问控制的 Git 版本管理服务；</li>
+<li>然后，Gerrit 又在 Git 基础上提供了web方式的代码评审功能；</li>
+<li>最有趣的一点，这个代码评审功能是可选的，团队可以决定一个项目是否需要加入评审逻辑</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="gerrit.md">gerrit.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              2/16
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: gerrit.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_notes slide-3">
+          <div class="inner">
+            
+            <header><h2>1. Gerrit 简介</h2></header>
+            
+            
+            <section><p class="notes">CI Builder, we use Jenkins / Reviewer, review process is optional</p>
+<p><img alt="Gerrit Overview" src="images/intro-quick-central-gerrit.png" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="gerrit.md">gerrit.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              3/16
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: gerrit.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-4">
+          <div class="inner">
+            
+            <header><h2>2. Gerrit 初体验</h2></header>
+            
+            
+            <section><p>使用 Gerrit 的最简步骤</p>
+<ul>
+<li>设置访问权限</li>
+<li>Submit a Change</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="gerrit.md">gerrit.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              4/16
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: gerrit.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-5">
+          <div class="inner">
+            
+            <header><h2>2.1 设置访问权限</h2></header>
+            
+            
+            <section><p>如果需要对代码进行修改或者对代码进行评审，就必须到 Web 控制台上进行设置</p>
+<h3>登录 Web 控制台</h3>
+<p><a href="http://172.16.100.130/gerrit/">Gerrit Web Console</a> 已经集成了账号管理系统，大家可以使用自己的jira账号直接登录(Sign In)</p>
+<p>点击Gerrit 页面右上角“Sign In”链接后，出现如下登录界面</p>
+<p><img alt="Gerrit Sign In" src="images/gerrit-sign-in.png" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="gerrit.md">gerrit.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              5/16
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: gerrit.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-6">
+          <div class="inner">
+            
+            <header><h2>配置 SSH(HTTP) 访问认证</h2></header>
+            
+            
+            <section><p>进入<a href="http://172.16.100.130/gerrit/#/settings/">Settings</a>界面</p>
+<h3>SSH Public Keys</h3>
+<p><img alt="Gerrit SSH Public Keys" src="images/gerrit-ssh-public-keys.png" /></p>
+<p>点"Add Key ..."按钮，把本机ssh密钥对中的公钥填入对话框。 </p>
+<p>☞ 进一步阅读： <a href="https://www.linode.com/docs/security/use-public-key-authentication-with-ssh">Use Public Key Authentication with SSH</a></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="gerrit.md">gerrit.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              6/16
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: gerrit.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-7">
+          <div class="inner">
+            
+            <header><h2>用命令行直接访问 Gerrit</h2></header>
+            
+            
+            <section><p>完成以上配置后，我们就可以与 Gerrit 进行对话了</p>
+<pre><code>➜  learn-git git:(master) ✗ ssh -p29418 liyan@172.16.100.90
+
+  ****    Welcome to Gerrit Code Review    ****
+
+  Hi liyan, you have successfully connected over SSH.
+
+  Unfortunately, interactive shells are disabled.
+  To clone a hosted Git repository, use:
+
+  git clone ssh://liyan@172.16.100.90:29418/REPOSITORY_NAME.git
+
+Connection to 172.16.100.90 closed.
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="gerrit.md">gerrit.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              7/16
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: gerrit.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-8">
+          <div class="inner">
+            
+            <header><h3>HTTP Password</h3></header>
+            
+            
+            <section><p><img alt="Gerrit HTTP Password" src="images/gerrit-http-password.png" /></p>
+<p>On Gerrit installations that do not support SSH authentication, the user must authenticate via HTTP/HTTPS.</p>
+<p>参考<a href="https://gerrit-documentation.storage.googleapis.com/Documentation/2.13.3/user-upload.html#http">链接</a></p>
+<p>设置之后，用户可以通过HTTP协议访问仓库</p>
+<pre><code>git clone http://it.feiliu.com/gerrit/a/sandbox/hello_world
+</code></pre>
+<p>HTTP Digest Authentication Removed at 2.14</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="gerrit.md">gerrit.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              8/16
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: gerrit.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-9">
+          <div class="inner">
+            
+            <header><h2>执行一下 <code>gerrit</code> 命令</h2></header>
+            
+            
+            <section><p>配置好 <code>SSH Public Keys</code> 之后，我们就可以使用 Gerrit 提供的服务了</p>
+<pre><code>ssh -p29418 172.16.100.130 gerrit
+</code></pre>
+<p>可以看到这个命令的使用提示信息。为了减少输入，我设置了一个别名</p>
+<pre><code>alias gerrit="ssh -p29418 172.16.100.90 gerrit"
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="gerrit.md">gerrit.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              9/16
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: gerrit.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-10">
+          <div class="inner">
+            
+            <header><h2>2.2 Submit a Change</h2></header>
+            
+            
+            <section><p>接下来咱们在沙箱工程中提交一个变更</p>
+<p>使用 Gerrit 和 使用其它 Git 服务基本一样，其中存在的细微差别我会着重强调</p>
+<h3>拷贝 clone 命令</h3>
+<p><img alt="Clone with commit-msg hook" src="images/gerrit-clone-with-commit-msg-hook.png" /></p>
+<p>在 Web Console 中 拷贝 clone 命令，注意 必须选择<code>Clone with commit-msg hook</code>方式！</p>
+<pre><code>➜  /tmp git clone ssh://liyan@172.16.100.130:29418/sandbox/hello_world &amp;&amp; scp -p -P 29418 liyan@172.16.100.130:hooks/commit-msg hello_world/.git/hooks/
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="gerrit.md">gerrit.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              10/16
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: gerrit.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-11">
+          <div class="inner">
+            
+            <header><h2>2.2 Submit a Change</h2></header>
+            
+            
+            <section><h3>执行 clone 命令</h3>
+<p><img alt="Execute Clone Command" src="images/clone-with-commit-msg-hook.png" /></p>
+<p>☞ 进一步阅读： Gerrit 在实现 Git 服务的基础上，添加了代码 review 的功能，因此在clone命令之后，还从服务器上又拷贝了一个 <code>commit-msg</code> 的钩子工具。</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="gerrit.md">gerrit.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              11/16
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: gerrit.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-12">
+          <div class="inner">
+            
+            <header><h2>2.2 Submit a Change</h2></header>
+            
+            
+            <section><h3>提交本地 &amp;&amp; 推送到 Gerrit</h3>
+<p><img alt="Execute Clone Command" src="images/commit-and-push-to-gerrit.png" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="gerrit.md">gerrit.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              12/16
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: gerrit.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-13">
+          <div class="inner">
+            
+            <header><h2>3. Gerrit 进阶： Submit changes for review</h2></header>
+            
+            
+            <section><p>☞ 检查 Change-Id ， 这个增加的Change-Id字段是实现 Gerrit 代码评审功能所必须的。如果没有加入commit-msg钩子或不具备执行权限，将不生成此字段。这样commit的代码只能直接提交到主干，无法进行review</p>
+<pre><code>➜  hello_world git:(master) git log
+commit 72f756d6c5ee1a37ab965a18dc20a071ef8535b9
+Author: twotwo &lt;twotwo.li@gmail.com&gt;
+Date:   Wed Feb 15 16:58:54 2017 +0800
+
+    commit for review
+
+    Change-Id: I648d97f05ef616d10e426d1ac6cff9ace07f39a8
+
+commit 12a550cf75e5b1347cf750ba35b440c9c9d049f8
+Author: twotwo &lt;twotwo.li@gmail.com&gt;
+Date:   Tue Dec 13 18:30:00 2016 +0800
+
+    add README.md
+
+    Change-Id: I55be6e211eaf80a72a5e6c363745a9a43c64d362
+(END)
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="gerrit.md">gerrit.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              13/16
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: gerrit.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-14">
+          <div class="inner">
+            
+            
+            <section><p>提交 Review</p>
+<pre><code>➜  hello_world git:(master) git push -u origin HEAD:refs/for/master
+Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 613 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+remote: Processing changes: new: 1, refs: 1, done    
+remote: 
+remote: New Changes:
+remote:   http://172.16.100.90/gerrit/2 commit for review
+remote: 
+To ssh://172.16.100.90:29418/sandbox/hello_world
+ * [new branch]      HEAD -&gt; refs/for/master
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="gerrit.md">gerrit.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              14/16
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: gerrit.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-15">
+          <div class="inner">
+            
+            <header><h2>4. 在 Web Console 中进行代码评审</h2></header>
+            
+            
+            <section><h3>Verify Changes</h3>
+<p>在 Web Console 的 <a href="http://172.16.100.90/gerrit/#/dashboard/self">My Reviews</a> 的 Outgoing reviews 中，出现了这条提交信息</p>
+<p>Review 这个版本与上个版本直接的不同</p>
+<p><img alt="Diff Files one by one" src="images/gerrit-review.png" /></p>
+<h3>Submit the Change</h3>
+<p>在 Web Console 中， Code Review 进行打分，累计得分足够后确认提交。</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="gerrit.md">gerrit.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              15/16
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: gerrit.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-16">
+          <div class="inner">
+            
+            <header><h2>5. 学习效果自我评估</h2></header>
+            
+            
+            <section><p>按照 2. Gerrit 初体验 中的“设置访问权限”指示，请先设置好自己的访问权限，然后 <code>clone</code> 沙箱工程到本地</p>
+<pre><code>➜  /tmp git clone ssh://liyan@172.16.100.130:29418/sandbox/hello_world &amp;&amp; scp -p -P 29418 liyan@172.16.100.130:hooks/commit-msg hello_world/.git/hooks/
+</code></pre>
+<p><img alt="" src="" /></p>
+<p>⚠️请在这个项目里进行练习！</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="gerrit.md">gerrit.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              16/16
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  <div id="toc" class="sidebar hidden">
+    <h2>Table of Contents</h2>
+    <table>
+      <caption>Table of Contents</caption>
+      
+      <tr id="toc-row-1">
+        <th><a href="#slide1">Gerrit 使用入门</a></th>
+        <td><a href="#slide1">1</a></td>
+      </tr>
+      
+        
+        <tr id="toc-row-2" class="sub">
+          <th><a href="#slide2">1. Gerrit 简介</a></th>
+          <td><a href="#slide2">2</a></td>
+        </tr>
+        
+        <tr id="toc-row-3" class="sub">
+          <th><a href="#slide3">1. Gerrit 简介</a></th>
+          <td><a href="#slide3">3</a></td>
+        </tr>
+        
+        <tr id="toc-row-4" class="sub">
+          <th><a href="#slide4">2. Gerrit 初体验</a></th>
+          <td><a href="#slide4">4</a></td>
+        </tr>
+        
+        <tr id="toc-row-5" class="sub">
+          <th><a href="#slide5">2.1 设置访问权限</a></th>
+          <td><a href="#slide5">5</a></td>
+        </tr>
+        
+        <tr id="toc-row-6" class="sub">
+          <th><a href="#slide6">配置 SSH(HTTP) 访问认证</a></th>
+          <td><a href="#slide6">6</a></td>
+        </tr>
+        
+        <tr id="toc-row-7" class="sub">
+          <th><a href="#slide7">用命令行直接访问 Gerrit</a></th>
+          <td><a href="#slide7">7</a></td>
+        </tr>
+        
+      
+      
+      <tr id="toc-row-8">
+        <th><a href="#slide8">-</a></th>
+        <td><a href="#slide8">8</a></td>
+      </tr>
+      
+        
+        <tr id="toc-row-9" class="sub">
+          <th><a href="#slide9">执行一下 <code>gerrit</code> 命令</a></th>
+          <td><a href="#slide9">9</a></td>
+        </tr>
+        
+        <tr id="toc-row-10" class="sub">
+          <th><a href="#slide10">2.2 Submit a Change</a></th>
+          <td><a href="#slide10">10</a></td>
+        </tr>
+        
+        <tr id="toc-row-11" class="sub">
+          <th><a href="#slide11">2.2 Submit a Change</a></th>
+          <td><a href="#slide11">11</a></td>
+        </tr>
+        
+        <tr id="toc-row-12" class="sub">
+          <th><a href="#slide12">2.2 Submit a Change</a></th>
+          <td><a href="#slide12">12</a></td>
+        </tr>
+        
+        <tr id="toc-row-13" class="sub">
+          <th><a href="#slide13">3. Gerrit 进阶： Submit changes for review</a></th>
+          <td><a href="#slide13">13</a></td>
+        </tr>
+        
+      
+      
+      <tr id="toc-row-14">
+        <th><a href="#slide14">-</a></th>
+        <td><a href="#slide14">14</a></td>
+      </tr>
+      
+        
+        <tr id="toc-row-15" class="sub">
+          <th><a href="#slide15">4. 在 Web Console 中进行代码评审</a></th>
+          <td><a href="#slide15">15</a></td>
+        </tr>
+        
+        <tr id="toc-row-16" class="sub">
+          <th><a href="#slide16">5. 学习效果自我评估</a></th>
+          <td><a href="#slide16">16</a></td>
+        </tr>
+        
+      
+      
+    </table>
+  </div>
+  
+  <div id="help" class="sidebar hidden">
+    <h2>Help</h2>
+    <table>
+      <caption>Help</caption>
+      <tr>
+        <th>Table of Contents</th>
+        <td>t</td>
+      </tr>
+      <tr>
+        <th>Exposé</th>
+        <td>ESC</td>
+      </tr>
+      <tr>
+        <th>Full screen slides</th>
+        <td>e</td>
+      </tr>
+      <tr>
+        <th>Presenter View</th>
+        <td>p</td>
+      </tr>
+      <tr>
+        <th>Source Files</th>
+        <td>s</td>
+      </tr>
+      <tr>
+        <th>Slide Numbers</th>
+        <td>n</td>
+      </tr>
+      <tr>
+        <th>Toggle screen blanking</th>
+        <td>b</td>
+      </tr>
+      <tr>
+        <th>Show/hide slide context</th>
+        <td>c</td>
+      </tr>
+      <tr>
+        <th>Notes</th>
+        <td>2</td>
+      </tr>
+      <tr>
+        <th>Help</th>
+        <td>h</td>
+      </tr>
+    </table>
+  </div>
+  <script>main()</script>
+</body>
+</html>

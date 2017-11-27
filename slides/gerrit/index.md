@@ -1,5 +1,6 @@
 # Git 协作开发上手指南
 .notes: Generate HTML5 slideshows by landslide
+
 <!-- landslide index.md --relative --copy-theme -d index.html -->
 
  * V1.0
@@ -20,15 +21,43 @@
 * 团队用gerrit做代码管理；
 
 ## 小王的学习路径
-* 了解工作环境下这些服务都是怎样工作的 本篇文章
+* 了解开发环境下这些服务都是怎样工作的 本篇文章
 * 学习如何在Windows下[玩转 Git Bash](./git-bash.html) 
-* 学习更多 gerrit 进行协同开发的知识
+* 学习更多 gerrit 进行协同开发的知识 [Gerrit 使用入门](./gerrit.html)
 * 练习在开发机与测试机上进行同步的开发测试
 
 
 ---
 
-## git bash
-推荐*Git for Windows*是为了让大家能在windows的终端下书写命令行。
+## 本文主要内容
 
-这里有一篇参考文章[初学git：用git bash往github push代码](http://www.cnblogs.com/zichi/p/4703999.html)
+### 1. 工作环境介绍
+### 2. Gerrit与代码评审
+### 3. 持续集成的实践
+### 4. 总结
+
+---
+
+## 1. 工作环境介绍
+
+Gerrit Overview
+
+![Gerrit Overview](images/intro-quick-central-gerrit.png)
+
+---
+
+## 1.1 本地环境一览
+![本地环境一览](images/git-ci.png)
+
+---
+
+## 2. Gerrit与代码评审
+
+---
+
+## 3. 持续集成实践
+
+---
+
+## 4. 总结
+

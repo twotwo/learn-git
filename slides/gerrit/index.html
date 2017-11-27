@@ -25,7 +25,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Git BASH 上手</title>
+    <title>Git 协作开发上手指南</title>
     <!-- Styles -->
     
     <link rel="stylesheet" media="print" href="theme/css/print.css">
@@ -54,10 +54,12 @@
         <div class="slide has_notes slide-1">
           <div class="inner">
             
-            <header><h1>Git BASH 上手</h1></header>
+            <header><h1>Git 协作开发上手指南</h1></header>
             
             
             <section><p class="notes">Generate HTML5 slideshows by landslide</p>
+<!-- landslide index.md --relative --copy-theme -d index.html -->
+
 <ul>
 <li>V1.0</li>
 <li>liyan 2017-11-15</li>
@@ -81,7 +83,7 @@
             </aside>
             
             <aside class="page_number">
-              1/13
+              1/8
             </aside>
           </footer>
         </div>
@@ -98,14 +100,15 @@
             <section><ul>
 <li>用一台windows开发机；</li>
 <li>用一台centos测试机；</li>
-<li>Jenkins</li>
-<li>gerrit</li>
+<li>团队用Jenkins做持续集成；</li>
+<li>团队用gerrit做代码管理；</li>
 </ul>
 <h2>小王的学习路径</h2>
 <ul>
-<li>在开发机上安装 git 环境： <a href="./git-bash.html">玩转 Git Bash</a> </li>
-<li>使用 gerrit 进行协同开发</li>
-<li>在测试机上同步测试</li>
+<li>了解开发环境下这些服务都是怎样工作的 本篇文章</li>
+<li>学习如何在Windows下<a href="./git-bash.html">玩转 Git Bash</a> </li>
+<li>学习更多 gerrit 进行协同开发的知识 <a href="./gerrit.html">Gerrit 使用入门</a></li>
+<li>练习在开发机与测试机上进行同步的开发测试</li>
 </ul></section>
             
           </div>
@@ -122,7 +125,7 @@
             </aside>
             
             <aside class="page_number">
-              2/13
+              2/8
             </aside>
           </footer>
         </div>
@@ -133,12 +136,13 @@
         <div class="slide slide-3">
           <div class="inner">
             
-            <header><h2># Git for Windows</h2></header>
+            <header><h2>本文主要内容</h2></header>
             
             
-            <section><p>Git for Windows是Git官方提供的Windows版本，包括命令行和图形界面。</p>
-<p><a href="https://git-for-windows.github.io/">git-for-windows</a></p>
-<p><img alt="示意图" src="https://git-for-windows.github.io/img/gw1web_thumb.png" /></p></section>
+            <section><h3>1. 工作环境介绍</h3>
+<h3>2. Gerrit与代码评审</h3>
+<h3>3. 持续集成的实践</h3>
+<h3>4. 总结</h3></section>
             
           </div>
           <div class="presenter_notes">
@@ -154,7 +158,7 @@
             </aside>
             
             <aside class="page_number">
-              3/13
+              3/8
             </aside>
           </footer>
         </div>
@@ -165,11 +169,11 @@
         <div class="slide slide-4">
           <div class="inner">
             
-            <header><h2>安装</h2></header>
+            <header><h2>1. 工作环境介绍</h2></header>
             
             
-            <section><p>a. Adjusting your PATH environment: Use Git and optional Unix tools
-    <img alt="add-unix-tools-to-path" src="images/git-bash-add-unix-tools-to-path.png" /></p></section>
+            <section><p>Gerrit Overview</p>
+<p><img alt="Gerrit Overview" src="images/intro-quick-central-gerrit.png" /></p></section>
             
           </div>
           <div class="presenter_notes">
@@ -185,7 +189,7 @@
             </aside>
             
             <aside class="page_number">
-              4/13
+              4/8
             </aside>
           </footer>
         </div>
@@ -196,11 +200,10 @@
         <div class="slide slide-5">
           <div class="inner">
             
-            <header><h2>安装</h2></header>
+            <header><h2>1.1 本地环境一览</h2></header>
             
             
-            <section><p>b. Configuring the line ending conversions: checkout as-is, commit Unix-style line endings
-    <img alt="checkout-and-commit-unix-style" src="images/git-bash-checkout-and-commit-unix-style.png" /></p></section>
+            <section><p><img alt="本地环境一览" src="images/git-ci.png" /></p></section>
             
           </div>
           <div class="presenter_notes">
@@ -216,7 +219,7 @@
             </aside>
             
             <aside class="page_number">
-              5/13
+              5/8
             </aside>
           </footer>
         </div>
@@ -227,11 +230,8 @@
         <div class="slide slide-6">
           <div class="inner">
             
-            <header><h2>安装</h2></header>
+            <header><h2>2. Gerrit与代码评审</h2></header>
             
-            
-            <section><p>c. Configuring the terminal emulator to use the Git Bash: Use Windows' default console window
-    <img alt="use-windows-console" src="images/git-bash-use-windows-console.png" /></p></section>
             
           </div>
           <div class="presenter_notes">
@@ -247,7 +247,7 @@
             </aside>
             
             <aside class="page_number">
-              6/13
+              6/8
             </aside>
           </footer>
         </div>
@@ -258,13 +258,8 @@
         <div class="slide slide-7">
           <div class="inner">
             
-            <header><h2>安装</h2></header>
+            <header><h2>3. 持续集成实践</h2></header>
             
-            
-            <section><p>d. Configuring extra options: 
-    * Enable file system caching
-    * Enable Git Credential Manager
-    <img alt="extra-options" src="images/git-bash-extra-options.png" /></p></section>
             
           </div>
           <div class="presenter_notes">
@@ -280,7 +275,7 @@
             </aside>
             
             <aside class="page_number">
-              7/13
+              7/8
             </aside>
           </footer>
         </div>
@@ -291,22 +286,8 @@
         <div class="slide slide-8">
           <div class="inner">
             
-            <header><h2>配置</h2></header>
+            <header><h2>4. 总结</h2></header>
             
-            
-            <section><p>a. 配置访问密钥对</p>
-<pre><code>$ ssh-keygen -q -t rsa -C "testtest@feiliu.com"
-Enter file in which to save the key (/c/Users/liyan/.ssh/id_rsa):
-Enter passphrase (empty for no passphrase):
-Enter same passphrase again:
-
-liyan@hummer MINGW32 ~/.ssh
-$ ll ~/.ssh/
-total 9
--rw-r--r-- 1 liyan 197121 1679 Nov 24 17:10 id_rsa
--rw-r--r-- 1 liyan 197121  401 Nov 24 17:10 id_rsa.pub
--rw-r--r-- 1 liyan 197121  627 Jun 12  2014 known_hosts
-</code></pre></section>
             
           </div>
           <div class="presenter_notes">
@@ -322,174 +303,7 @@ total 9
             </aside>
             
             <aside class="page_number">
-              8/13
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: index.md -->
-      <div class="slide-wrapper">
-        <div class="slide slide-9">
-          <div class="inner">
-            
-            <header><h2>配置</h2></header>
-            
-            
-            <section><p>b. 获取访问用的公钥</p>
-<pre><code>$ cat ~/.ssh/id_rsa.pub
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDGIzTh6BKYWI1AjKeTvvsAQm/bxL6iJ9tFXiXnqjXx
-MGDIfno8JMi6CAX0IUC1tj7G1jNuQsmKi2E7P+Ql5SXHIJpboTk8UGqzVq62GOZTaZTV5oZ9TUgMyTv2
-n51jP0T7W9J+0R8g7zneQfFZtKZ0ryCDRCxweZNGFYWku96bBvBYDRiqG/3bbmAh3NRvWx5zKBv6ieat
-gjZpxNaVR0kwd2XX19rFTu4FFDE4RCuKQFlFUVM7uyhvDRWAsha87mitW2WD4xIKVcTzwOmBrGMPOKiv
-FfM3TzkUn0eTFOhJi0U6ynmH7uHAuVHhXWMGmbtWN9e8G8ba82beNPPtMugT testtest@feiliu.com
-</code></pre></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="index.md">index.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              9/13
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: index.md -->
-      <div class="slide-wrapper">
-        <div class="slide slide-10">
-          <div class="inner">
-            
-            <header><h2>配置</h2></header>
-            
-            
-            <section><p>c1. 把公钥配置到github
-    <img alt="github-new-sshkey" src="images/github-new-sshkey.png" /></p></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="index.md">index.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              10/13
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: index.md -->
-      <div class="slide-wrapper">
-        <div class="slide slide-11">
-          <div class="inner">
-            
-            <header><h2>配置</h2></header>
-            
-            
-            <section><p>c2. 把公钥配置到gerrit
-    <img alt="gerrit-add-sshkey" src="images/gerrit-add-sshkey.png" /></p></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="index.md">index.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              11/13
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: index.md -->
-      <div class="slide-wrapper">
-        <div class="slide slide-12">
-          <div class="inner">
-            
-            <header><h2>配置</h2></header>
-            
-            
-            <section><p>d1. 测试github账号</p>
-<pre><code>$ ssh -T git@github.com
-Hi twotwo! You've successfully authenticated, but GitHub does not provide shell access.
-</code></pre>
-<p>d2. 测试gerrit账号</p>
-<pre><code>$ ssh -p29418 -l testtest 172.16.100.130 gerrit version
-gerrit version 2.13.3
-</code></pre></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="index.md">index.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              12/13
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: index.md -->
-      <div class="slide-wrapper">
-        <div class="slide slide-13">
-          <div class="inner">
-            
-            <header><h2>git bash</h2></header>
-            
-            
-            <section><p>推荐<em>Git for Windows</em>是为了让大家能在windows的终端下书写命令行。</p>
-<p>这里有一篇参考文章<a href="http://www.cnblogs.com/zichi/p/4703999.html">初学git：用git bash往github push代码</a></p></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="index.md">index.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              13/13
+              8/8
             </aside>
           </footer>
         </div>
@@ -504,7 +318,7 @@ gerrit version 2.13.3
       <caption>Table of Contents</caption>
       
       <tr id="toc-row-1">
-        <th><a href="#slide1">Git BASH 上手</a></th>
+        <th><a href="#slide1">Git 协作开发上手指南</a></th>
         <td><a href="#slide1">1</a></td>
       </tr>
       
@@ -515,58 +329,33 @@ gerrit version 2.13.3
         </tr>
         
         <tr id="toc-row-3" class="sub">
-          <th><a href="#slide3"># Git for Windows</a></th>
+          <th><a href="#slide3">本文主要内容</a></th>
           <td><a href="#slide3">3</a></td>
         </tr>
         
         <tr id="toc-row-4" class="sub">
-          <th><a href="#slide4">安装</a></th>
+          <th><a href="#slide4">1. 工作环境介绍</a></th>
           <td><a href="#slide4">4</a></td>
         </tr>
         
         <tr id="toc-row-5" class="sub">
-          <th><a href="#slide5">安装</a></th>
+          <th><a href="#slide5">1.1 本地环境一览</a></th>
           <td><a href="#slide5">5</a></td>
         </tr>
         
         <tr id="toc-row-6" class="sub">
-          <th><a href="#slide6">安装</a></th>
+          <th><a href="#slide6">2. Gerrit与代码评审</a></th>
           <td><a href="#slide6">6</a></td>
         </tr>
         
         <tr id="toc-row-7" class="sub">
-          <th><a href="#slide7">安装</a></th>
+          <th><a href="#slide7">3. 持续集成实践</a></th>
           <td><a href="#slide7">7</a></td>
         </tr>
         
         <tr id="toc-row-8" class="sub">
-          <th><a href="#slide8">配置</a></th>
+          <th><a href="#slide8">4. 总结</a></th>
           <td><a href="#slide8">8</a></td>
-        </tr>
-        
-        <tr id="toc-row-9" class="sub">
-          <th><a href="#slide9">配置</a></th>
-          <td><a href="#slide9">9</a></td>
-        </tr>
-        
-        <tr id="toc-row-10" class="sub">
-          <th><a href="#slide10">配置</a></th>
-          <td><a href="#slide10">10</a></td>
-        </tr>
-        
-        <tr id="toc-row-11" class="sub">
-          <th><a href="#slide11">配置</a></th>
-          <td><a href="#slide11">11</a></td>
-        </tr>
-        
-        <tr id="toc-row-12" class="sub">
-          <th><a href="#slide12">配置</a></th>
-          <td><a href="#slide12">12</a></td>
-        </tr>
-        
-        <tr id="toc-row-13" class="sub">
-          <th><a href="#slide13">git bash</a></th>
-          <td><a href="#slide13">13</a></td>
         </tr>
         
       
