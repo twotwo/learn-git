@@ -25,7 +25,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Gerrit 使用入门</title>
+    <title>玩转 Git BASH</title>
     <!-- Styles -->
     
     <link rel="stylesheet" media="print" href="theme/css/print.css">
@@ -49,24 +49,24 @@
     </div>
     <div class="slides">
       
-      <!-- slide source: users.md -->
+      <!-- slide source: git_bash.md -->
       <div class="slide-wrapper">
-        <div class="slide has_notes slide-1">
+        <div class="slide slide-1">
           <div class="inner">
             
-            <header><h1>Gerrit 使用入门</h1></header>
+            <header><h1>玩转 Git BASH</h1></header>
             
             
-            <section><p class="notes">Generate HTML5 slideshows by landslide</p>
+            <section><p>.notes: Generate HTML5 slideshows by landslide
+<!-- landslide git_bash.md --relative --copy-theme -d git-bash.html --></p>
 <ul>
 <li>V1.0</li>
-<li>liyan 2017-11-15</li>
+<li>liyan 2017-11-27</li>
 </ul>
-<h2>1. Gerrit 是什么</h2>
-<h2>2. Gerrit 怎么用</h2>
-<!-- .qr: 450|http://172.16.100.90:10000/slide/gerrit/ -->
+<h2>从前有个工程师，想用 git …</h2>
+<!-- .qr: 450|http://172.16.100.90:10000/slide/gerrit/git-bash.html -->
 
-<p><img alt="QR Code" src="images/qr-code.png" /></p></section>
+<p><img alt="QR Code" src="images/qr-git-bash.png" /></p></section>
             
           </div>
           <div class="presenter_notes">
@@ -78,30 +78,35 @@
           <footer>
             
             <aside class="source">
-              Source: <a href="users.md">users.md</a>
+              Source: <a href="git_bash.md">git_bash.md</a>
             </aside>
             
             <aside class="page_number">
-              1/16
+              1/18
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: users.md -->
+      <!-- slide source: git_bash.md -->
       <div class="slide-wrapper">
         <div class="slide slide-2">
           <div class="inner">
             
-            <header><h2>1. Gerrit 简介</h2></header>
+            <header><h2>小王的学习路径</h2></header>
             
             
-            <section><p>Gerrit 是一个用 Java 写的开源软件：</p>
+            <section><p>Back to <a href="./index.html">Git 协作开发上手指南</a></p>
 <ul>
-<li>首先，Gerrit 提供了具备访问控制的 Git 版本管理服务；</li>
-<li>然后，Gerrit 又在 Git 基础上提供了web方式的代码评审功能；</li>
-<li>最有趣的一点，这个代码评审功能是可选的，团队可以决定一个项目是否需要加入评审逻辑</li>
-</ul></section>
+<li>在开发机上安装 git 环境： <a href="./git-bash.html">玩转 Git Bash</a> 本篇文章</li>
+<li>使用 gerrit 进行协同开发</li>
+<li>在测试机上同步测试</li>
+</ul>
+<h2>本文内容包括</h2>
+<h3>1. 安装 Git for Windows 需要注意的内容</h3>
+<h3>2. 如何配置 SSH Public Key 访问外部的git服务器</h3>
+<h3>3. 如何配置本地仓库</h3>
+<h3>4. 在 Gerrit SandBox 练习 git 基本操作</h3></section>
             
           </div>
           <div class="presenter_notes">
@@ -113,26 +118,27 @@
           <footer>
             
             <aside class="source">
-              Source: <a href="users.md">users.md</a>
+              Source: <a href="git_bash.md">git_bash.md</a>
             </aside>
             
             <aside class="page_number">
-              2/16
+              2/18
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: users.md -->
+      <!-- slide source: git_bash.md -->
       <div class="slide-wrapper">
-        <div class="slide has_notes slide-3">
+        <div class="slide slide-3">
           <div class="inner">
             
-            <header><h2>1. Gerrit 简介</h2></header>
+            <header><h2>关于 Git for Windows</h2></header>
             
             
-            <section><p class="notes">CI Builder, we use Jenkins / Reviewer, review process is optional</p>
-<p><img alt="Gerrit Overview" src="images/intro-quick-central-gerrit.png" /></p></section>
+            <section><p>Git for Windows是Git官方提供的Windows版本，包括命令行和图形界面。</p>
+<p><a href="https://git-for-windows.github.io/">git-for-windows</a></p>
+<p><img alt="示意图" src="https://git-for-windows.github.io/img/gw1web_thumb.png" /></p></section>
             
           </div>
           <div class="presenter_notes">
@@ -144,28 +150,153 @@
           <footer>
             
             <aside class="source">
-              Source: <a href="users.md">users.md</a>
+              Source: <a href="git_bash.md">git_bash.md</a>
             </aside>
             
             <aside class="page_number">
-              3/16
+              3/18
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: users.md -->
+      <!-- slide source: git_bash.md -->
       <div class="slide-wrapper">
         <div class="slide slide-4">
           <div class="inner">
             
-            <header><h2>2. Gerrit 初体验</h2></header>
+            <header><h2>1. 安装</h2></header>
             
             
-            <section><p>使用 Gerrit 的最简步骤</p>
+            <section><p><em>Git for Windows</em>是官方推荐的windows环境的Git工具集，包括Git GUI和Git Bash两部分。</p>
+<p>在安装工程中，有以下一些选项比较重要</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="git_bash.md">git_bash.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              4/18
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: git_bash.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-5">
+          <div class="inner">
+            
+            <header><h2>1.1 Adjusting your PATH environment</h2></header>
+            
+            
+            <section><p>请选择 Use Git and optional Unix tools
+    <img alt="add-unix-tools-to-path" src="images/git-bash-add-unix-tools-to-path.png" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="git_bash.md">git_bash.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              5/18
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: git_bash.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-6">
+          <div class="inner">
+            
+            <header><h2>1.2 Configuring the line ending conversions</h2></header>
+            
+            
+            <section><p>请选择 checkout as-is, commit Unix-style line endings
+    <img alt="checkout-and-commit-unix-style" src="images/git-bash-checkout-and-commit-unix-style.png" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="git_bash.md">git_bash.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              6/18
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: git_bash.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-7">
+          <div class="inner">
+            
+            <header><h2>1.3 Configuring the terminal emulator to use the Git Bash</h2></header>
+            
+            
+            <section><p>请选择 Use Windows' default console window
+    <img alt="use-windows-console" src="images/git-bash-use-windows-console.png" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="git_bash.md">git_bash.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              7/18
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: git_bash.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-8">
+          <div class="inner">
+            
+            <header><h2>1.4 Configuring extra options</h2></header>
+            
+            
+            <section><p>请勾选以下内容</p>
 <ul>
-<li>设置访问权限</li>
-<li>Submit a Change</li>
+<li>Enable file system caching</li>
+<li>Enable Git Credential Manager
+<img alt="extra-options" src="images/git-bash-extra-options.png" /></li>
 </ul></section>
             
           </div>
@@ -178,176 +309,36 @@
           <footer>
             
             <aside class="source">
-              Source: <a href="users.md">users.md</a>
+              Source: <a href="git_bash.md">git_bash.md</a>
             </aside>
             
             <aside class="page_number">
-              4/16
+              8/18
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: users.md -->
-      <div class="slide-wrapper">
-        <div class="slide slide-5">
-          <div class="inner">
-            
-            <header><h2>2.1 设置访问权限</h2></header>
-            
-            
-            <section><p>如果需要对代码进行修改或者对代码进行评审，就必须到 Web 控制台上进行设置</p>
-<h3>登录 Web 控制台</h3>
-<p><a href="http://172.16.100.130/gerrit/">Gerrit Web Console</a> 已经集成了账号管理系统，大家可以使用自己的jira账号直接登录(Sign In)</p>
-<p>点击Gerrit 页面右上角“Sign In”链接后，出现如下登录界面</p>
-<p><img alt="Gerrit Sign In" src="images/gerrit-sign-in.png" /></p></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="users.md">users.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              5/16
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: users.md -->
-      <div class="slide-wrapper">
-        <div class="slide slide-6">
-          <div class="inner">
-            
-            <header><h2>配置 SSH(HTTP) 访问认证</h2></header>
-            
-            
-            <section><p>进入<a href="http://172.16.100.130/gerrit/#/settings/">Settings</a>界面</p>
-<h3>SSH Public Keys</h3>
-<p><img alt="Gerrit SSH Public Keys" src="images/gerrit-ssh-public-keys.png" /></p>
-<p>点"Add Key ..."按钮，把本机ssh密钥对中的公钥填入对话框。 </p>
-<p>☞ 进一步阅读： <a href="https://www.linode.com/docs/security/use-public-key-authentication-with-ssh">Use Public Key Authentication with SSH</a></p></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="users.md">users.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              6/16
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: users.md -->
-      <div class="slide-wrapper">
-        <div class="slide slide-7">
-          <div class="inner">
-            
-            <header><h2>用命令行直接访问 Gerrit</h2></header>
-            
-            
-            <section><p>完成以上配置后，我们就可以与 Gerrit 进行对话了</p>
-<pre><code>➜  learn-git git:(master) ✗ ssh -p29418 liyan@172.16.100.90
-
-  ****    Welcome to Gerrit Code Review    ****
-
-  Hi liyan, you have successfully connected over SSH.
-
-  Unfortunately, interactive shells are disabled.
-  To clone a hosted Git repository, use:
-
-  git clone ssh://liyan@172.16.100.90:29418/REPOSITORY_NAME.git
-
-Connection to 172.16.100.90 closed.
-</code></pre></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="users.md">users.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              7/16
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: users.md -->
-      <div class="slide-wrapper">
-        <div class="slide slide-8">
-          <div class="inner">
-            
-            <header><h3>HTTP Password</h3></header>
-            
-            
-            <section><p><img alt="Gerrit HTTP Password" src="images/gerrit-http-password.png" /></p>
-<p>On Gerrit installations that do not support SSH authentication, the user must authenticate via HTTP/HTTPS.</p>
-<p>参考<a href="https://gerrit-documentation.storage.googleapis.com/Documentation/2.13.3/user-upload.html#http">链接</a></p>
-<p>设置之后，用户可以通过HTTP协议访问仓库</p>
-<pre><code>git clone http://it.feiliu.com/gerrit/a/sandbox/hello_world
-</code></pre>
-<p>HTTP Digest Authentication Removed at 2.14</p></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="users.md">users.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              8/16
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: users.md -->
+      <!-- slide source: git_bash.md -->
       <div class="slide-wrapper">
         <div class="slide slide-9">
           <div class="inner">
             
-            <header><h2>执行一下 <code>gerrit</code> 命令</h2></header>
+            <header><h2>2. 配置 SSH Public Key</h2></header>
             
             
-            <section><p>配置好 <code>SSH Public Keys</code> 之后，我们就可以使用 Gerrit 提供的服务了</p>
-<pre><code>ssh -p29418 172.16.100.90 gerrit
-</code></pre>
-<p>可以看到这个命令的使用提示信息。为了减少输入，我设置了一个别名</p>
-<pre><code>alias gerrit="ssh -p29418 172.16.100.90 gerrit"
+            <section><h3>2.1 生成SSH RSA 密钥对</h3>
+<pre><code>$ ssh-keygen -q -t rsa -C "testtest@feiliu.com"
+Enter file in which to save the key (/c/Users/liyan/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+
+liyan@hummer MINGW32 ~/.ssh
+$ ll ~/.ssh/
+total 9
+-rw-r--r-- 1 liyan 197121 1679 Nov 24 17:10 id_rsa
+-rw-r--r-- 1 liyan 197121  401 Nov 24 17:10 id_rsa.pub
+-rw-r--r-- 1 liyan 197121  627 Jun 12  2014 known_hosts
 </code></pre></section>
             
           </div>
@@ -360,30 +351,30 @@ Connection to 172.16.100.90 closed.
           <footer>
             
             <aside class="source">
-              Source: <a href="users.md">users.md</a>
+              Source: <a href="git_bash.md">git_bash.md</a>
             </aside>
             
             <aside class="page_number">
-              9/16
+              9/18
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: users.md -->
+      <!-- slide source: git_bash.md -->
       <div class="slide-wrapper">
         <div class="slide slide-10">
           <div class="inner">
             
-            <header><h2>2.2 Submit a Change</h2></header>
+            <header><h2>2.2 获取RSA公钥</h2></header>
             
             
-            <section><p>接下来咱们在沙箱工程中提交一个变更</p>
-<p>使用 Gerrit 和 使用其它 Git 服务基本一样，其中存在的细微差别我会着重强调</p>
-<h3>拷贝 clone 命令</h3>
-<p><img alt="Clone with commit-msg hook" src="images/gerrit-clone-with-commit-msg-hook.png" /></p>
-<p>在 Web Console 中 拷贝 clone 命令，注意 必须选择<code>Clone with commit-msg hook</code>方式！</p>
-<pre><code>➜  /tmp git clone ssh://liyan@172.16.100.130:29418/sandbox/hello_world &amp;&amp; scp -p -P 29418 liyan@172.16.100.130:hooks/commit-msg hello_world/.git/hooks/
+            <section><pre><code>$ cat ~/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDGIzTh6BKYWI1AjKeTvvsAQm/bxL6iJ9tFXiXnqjXx
+MGDIfno8JMi6CAX0IUC1tj7G1jNuQsmKi2E7P+Ql5SXHIJpboTk8UGqzVq62GOZTaZTV5oZ9TUgMyTv2
+n51jP0T7W9J+0R8g7zneQfFZtKZ0ryCDRCxweZNGFYWku96bBvBYDRiqG/3bbmAh3NRvWx5zKBv6ieat
+gjZpxNaVR0kwd2XX19rFTu4FFDE4RCuKQFlFUVM7uyhvDRWAsha87mitW2WD4xIKVcTzwOmBrGMPOKiv
+FfM3TzkUn0eTFOhJi0U6ynmH7uHAuVHhXWMGmbtWN9e8G8ba82beNPPtMugT testtest@feiliu.com
 </code></pre></section>
             
           </div>
@@ -396,27 +387,26 @@ Connection to 172.16.100.90 closed.
           <footer>
             
             <aside class="source">
-              Source: <a href="users.md">users.md</a>
+              Source: <a href="git_bash.md">git_bash.md</a>
             </aside>
             
             <aside class="page_number">
-              10/16
+              10/18
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: users.md -->
+      <!-- slide source: git_bash.md -->
       <div class="slide-wrapper">
         <div class="slide slide-11">
           <div class="inner">
             
-            <header><h2>2.2 Submit a Change</h2></header>
+            <header><h2>2.3 把公钥配置到远端服务</h2></header>
             
             
-            <section><h3>执行 clone 命令</h3>
-<p><img alt="Execute Clone Command" src="images/clone-with-commit-msg-hook.png" /></p>
-<p>☞ 进一步阅读： Gerrit 在实现 Git 服务的基础上，添加了代码 review 的功能，因此在clone命令之后，还从服务器上又拷贝了一个 <code>commit-msg</code> 的钩子工具。</p></section>
+            <section><h3>2.3.1 把公钥配置到github</h3>
+<p><img alt="github-new-sshkey" src="images/github-new-sshkey.png" /></p></section>
             
           </div>
           <div class="presenter_notes">
@@ -428,26 +418,25 @@ Connection to 172.16.100.90 closed.
           <footer>
             
             <aside class="source">
-              Source: <a href="users.md">users.md</a>
+              Source: <a href="git_bash.md">git_bash.md</a>
             </aside>
             
             <aside class="page_number">
-              11/16
+              11/18
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: users.md -->
+      <!-- slide source: git_bash.md -->
       <div class="slide-wrapper">
         <div class="slide slide-12">
           <div class="inner">
             
-            <header><h2>2.2 Submit a Change</h2></header>
+            <header><h2>2.3.2 把公钥配置到gerrit</h2></header>
             
             
-            <section><h3>提交本地 &amp;&amp; 推送到 Gerrit</h3>
-<p><img alt="Execute Clone Command" src="images/commit-and-push-to-gerrit.png" /></p></section>
+            <section><p><img alt="gerrit-add-sshkey" src="images/gerrit-add-sshkey.png" /></p></section>
             
           </div>
           <div class="presenter_notes">
@@ -459,42 +448,31 @@ Connection to 172.16.100.90 closed.
           <footer>
             
             <aside class="source">
-              Source: <a href="users.md">users.md</a>
+              Source: <a href="git_bash.md">git_bash.md</a>
             </aside>
             
             <aside class="page_number">
-              12/16
+              12/18
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: users.md -->
+      <!-- slide source: git_bash.md -->
       <div class="slide-wrapper">
         <div class="slide slide-13">
           <div class="inner">
             
-            <header><h2>3. Gerrit 进阶： Submit changes for review</h2></header>
+            <header><h2>2.4 访问测试</h2></header>
             
             
-            <section><p>☞ 检查 Change-Id ， 这个增加的Change-Id字段是实现 Gerrit 代码评审功能所必须的。如果没有加入commit-msg钩子或不具备执行权限，将不生成此字段。这样commit的代码只能直接提交到主干，无法进行review</p>
-<pre><code>➜  hello_world git:(master) git log
-commit 72f756d6c5ee1a37ab965a18dc20a071ef8535b9
-Author: twotwo &lt;twotwo.li@gmail.com&gt;
-Date:   Wed Feb 15 16:58:54 2017 +0800
-
-    commit for review
-
-    Change-Id: I648d97f05ef616d10e426d1ac6cff9ace07f39a8
-
-commit 12a550cf75e5b1347cf750ba35b440c9c9d049f8
-Author: twotwo &lt;twotwo.li@gmail.com&gt;
-Date:   Tue Dec 13 18:30:00 2016 +0800
-
-    add README.md
-
-    Change-Id: I55be6e211eaf80a72a5e6c363745a9a43c64d362
-(END)
+            <section><h3>2.4.1 访问github账号</h3>
+<pre><code>$ ssh -T git@github.com
+Hi twotwo! You've successfully authenticated, but GitHub does not provide shell access.
+</code></pre>
+<h3>2.4.1 访问gerrit账号</h3>
+<pre><code>$ ssh -p29418 -l testtest 172.16.100.130 gerrit version
+gerrit version 2.13.3
 </code></pre></section>
             
           </div>
@@ -507,36 +485,96 @@ Date:   Tue Dec 13 18:30:00 2016 +0800
           <footer>
             
             <aside class="source">
-              Source: <a href="users.md">users.md</a>
+              Source: <a href="git_bash.md">git_bash.md</a>
             </aside>
             
             <aside class="page_number">
-              13/16
+              13/18
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: users.md -->
+      <!-- slide source: git_bash.md -->
       <div class="slide-wrapper">
         <div class="slide slide-14">
           <div class="inner">
             
+            <header><h2>3. 配置本地仓库</h2></header>
             
-            <section><p>提交 Review</p>
-<pre><code>➜  hello_world git:(master) git push -u origin HEAD:refs/for/master
-Counting objects: 3, done.
-Delta compression using up to 8 threads.
-Compressing objects: 100% (2/2), done.
-Writing objects: 100% (3/3), 613 bytes | 0 bytes/s, done.
-Total 3 (delta 0), reused 0 (delta 0)
-remote: Processing changes: new: 1, refs: 1, done    
-remote: 
-remote: New Changes:
-remote:   http://172.16.100.90/gerrit/2 commit for review
-remote: 
-To ssh://172.16.100.90:29418/sandbox/hello_world
- * [new branch]      HEAD -&gt; refs/for/master
+            
+            <section><p>有两种方式可以获得一个本地仓库，这里我们从gerrit沙箱中clone一个项目到本地</p>
+<ul>
+<li>在Gerrit页面上获取clone命名</li>
+<li>执行成功后设置本地仓库参数</li>
+<li>本地仓库提交到Gerrit</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="git_bash.md">git_bash.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              14/18
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: git_bash.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-15">
+          <div class="inner">
+            
+            <header><h2>3.1 在Gerrit页面上获取clone命名</h2></header>
+            
+            
+            <section><p><img alt="gerrit-clone" src="images/gerrit-clone.png" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="git_bash.md">git_bash.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              15/18
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: git_bash.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-16">
+          <div class="inner">
+            
+            <header><h2>3.2 执行成功后设置本地仓库参数</h2></header>
+            
+            
+            <section><pre><code>$ git config user.email
+liyan@feiliu.com
+
+$ git config user.email testtest@feiliu.com
+
+$ git config user.email
+testtest@feiliu.com
 </code></pre></section>
             
           </div>
@@ -549,30 +587,46 @@ To ssh://172.16.100.90:29418/sandbox/hello_world
           <footer>
             
             <aside class="source">
-              Source: <a href="users.md">users.md</a>
+              Source: <a href="git_bash.md">git_bash.md</a>
             </aside>
             
             <aside class="page_number">
-              14/16
+              16/18
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: users.md -->
+      <!-- slide source: git_bash.md -->
       <div class="slide-wrapper">
-        <div class="slide slide-15">
+        <div class="slide slide-17">
           <div class="inner">
             
-            <header><h2>4. 在 Web Console 中进行代码评审</h2></header>
+            <header><h2>3.3 本地仓库提交到Gerrit</h2></header>
             
             
-            <section><h3>Verify Changes</h3>
-<p>在 Web Console 的 <a href="http://172.16.100.90/gerrit/#/dashboard/self">My Reviews</a> 的 Outgoing reviews 中，出现了这条提交信息</p>
-<p>Review 这个版本与上个版本直接的不同</p>
-<p><img alt="Diff Files one by one" src="images/gerrit-review.png" /></p>
-<h3>Submit the Change</h3>
-<p>在 Web Console 中， Code Review 进行打分，累计得分足够后确认提交。</p></section>
+            <section><pre><code>$ git add testtest.md
+
+$ git commit -m 'my first commit'
+[master c4dfa72] my first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 testtest.md
+
+$ git push origin master
+Counting objects: 3, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 312 bytes | 312.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1)
+remote: Processing changes: refs: 1, done
+To ssh://172.16.100.130:29418/sandbox/hello_world
+   134e713..c4dfa72  master -&gt; master
+
+$ git log
+
+$ gitk #图形界面
+</code></pre></section>
             
           </div>
           <div class="presenter_notes">
@@ -584,29 +638,25 @@ To ssh://172.16.100.90:29418/sandbox/hello_world
           <footer>
             
             <aside class="source">
-              Source: <a href="users.md">users.md</a>
+              Source: <a href="git_bash.md">git_bash.md</a>
             </aside>
             
             <aside class="page_number">
-              15/16
+              17/18
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: users.md -->
+      <!-- slide source: git_bash.md -->
       <div class="slide-wrapper">
-        <div class="slide slide-16">
+        <div class="slide slide-18">
           <div class="inner">
             
-            <header><h2>5. 学习效果自我评估</h2></header>
+            <header><h2>4. git 基本操作 练习</h2></header>
             
             
-            <section><p>按照 2. Gerrit 初体验 中的“设置访问权限”指示，请先设置好自己的访问权限，然后 <code>clone</code> 沙箱工程到本地</p>
-<pre><code>➜  /tmp git clone ssh://liyan@172.16.100.130:29418/sandbox/hello_world &amp;&amp; scp -p -P 29418 liyan@172.16.100.130:hooks/commit-msg hello_world/.git/hooks/
-</code></pre>
-<p><img alt="" src="" /></p>
-<p>⚠️请在这个项目里进行练习！</p></section>
+            <section><p>向本地的另外一个目录中再次克隆上面的工程，练习获取远端的更新、解决冲突等操作</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -618,11 +668,11 @@ To ssh://172.16.100.90:29418/sandbox/hello_world
           <footer>
             
             <aside class="source">
-              Source: <a href="users.md">users.md</a>
+              Source: <a href="git_bash.md">git_bash.md</a>
             </aside>
             
             <aside class="page_number">
-              16/16
+              18/18
             </aside>
           </footer>
         </div>
@@ -637,90 +687,94 @@ To ssh://172.16.100.90:29418/sandbox/hello_world
       <caption>Table of Contents</caption>
       
       <tr id="toc-row-1">
-        <th><a href="#slide1">Gerrit 使用入门</a></th>
+        <th><a href="#slide1">玩转 Git BASH</a></th>
         <td><a href="#slide1">1</a></td>
       </tr>
       
         
         <tr id="toc-row-2" class="sub">
-          <th><a href="#slide2">1. Gerrit 简介</a></th>
+          <th><a href="#slide2">小王的学习路径</a></th>
           <td><a href="#slide2">2</a></td>
         </tr>
         
         <tr id="toc-row-3" class="sub">
-          <th><a href="#slide3">1. Gerrit 简介</a></th>
+          <th><a href="#slide3">关于 Git for Windows</a></th>
           <td><a href="#slide3">3</a></td>
         </tr>
         
         <tr id="toc-row-4" class="sub">
-          <th><a href="#slide4">2. Gerrit 初体验</a></th>
+          <th><a href="#slide4">1. 安装</a></th>
           <td><a href="#slide4">4</a></td>
         </tr>
         
         <tr id="toc-row-5" class="sub">
-          <th><a href="#slide5">2.1 设置访问权限</a></th>
+          <th><a href="#slide5">1.1 Adjusting your PATH environment</a></th>
           <td><a href="#slide5">5</a></td>
         </tr>
         
         <tr id="toc-row-6" class="sub">
-          <th><a href="#slide6">配置 SSH(HTTP) 访问认证</a></th>
+          <th><a href="#slide6">1.2 Configuring the line ending conversions</a></th>
           <td><a href="#slide6">6</a></td>
         </tr>
         
         <tr id="toc-row-7" class="sub">
-          <th><a href="#slide7">用命令行直接访问 Gerrit</a></th>
+          <th><a href="#slide7">1.3 Configuring the terminal emulator to use the Git Bash</a></th>
           <td><a href="#slide7">7</a></td>
         </tr>
         
-      
-      
-      <tr id="toc-row-8">
-        <th><a href="#slide8">-</a></th>
-        <td><a href="#slide8">8</a></td>
-      </tr>
-      
+        <tr id="toc-row-8" class="sub">
+          <th><a href="#slide8">1.4 Configuring extra options</a></th>
+          <td><a href="#slide8">8</a></td>
+        </tr>
         
         <tr id="toc-row-9" class="sub">
-          <th><a href="#slide9">执行一下 <code>gerrit</code> 命令</a></th>
+          <th><a href="#slide9">2. 配置 SSH Public Key</a></th>
           <td><a href="#slide9">9</a></td>
         </tr>
         
         <tr id="toc-row-10" class="sub">
-          <th><a href="#slide10">2.2 Submit a Change</a></th>
+          <th><a href="#slide10">2.2 获取RSA公钥</a></th>
           <td><a href="#slide10">10</a></td>
         </tr>
         
         <tr id="toc-row-11" class="sub">
-          <th><a href="#slide11">2.2 Submit a Change</a></th>
+          <th><a href="#slide11">2.3 把公钥配置到远端服务</a></th>
           <td><a href="#slide11">11</a></td>
         </tr>
         
         <tr id="toc-row-12" class="sub">
-          <th><a href="#slide12">2.2 Submit a Change</a></th>
+          <th><a href="#slide12">2.3.2 把公钥配置到gerrit</a></th>
           <td><a href="#slide12">12</a></td>
         </tr>
         
         <tr id="toc-row-13" class="sub">
-          <th><a href="#slide13">3. Gerrit 进阶： Submit changes for review</a></th>
+          <th><a href="#slide13">2.4 访问测试</a></th>
           <td><a href="#slide13">13</a></td>
         </tr>
         
-      
-      
-      <tr id="toc-row-14">
-        <th><a href="#slide14">-</a></th>
-        <td><a href="#slide14">14</a></td>
-      </tr>
-      
+        <tr id="toc-row-14" class="sub">
+          <th><a href="#slide14">3. 配置本地仓库</a></th>
+          <td><a href="#slide14">14</a></td>
+        </tr>
         
         <tr id="toc-row-15" class="sub">
-          <th><a href="#slide15">4. 在 Web Console 中进行代码评审</a></th>
+          <th><a href="#slide15">3.1 在Gerrit页面上获取clone命名</a></th>
           <td><a href="#slide15">15</a></td>
         </tr>
         
         <tr id="toc-row-16" class="sub">
-          <th><a href="#slide16">5. 学习效果自我评估</a></th>
+          <th><a href="#slide16">3.2 执行成功后设置本地仓库参数</a></th>
           <td><a href="#slide16">16</a></td>
+        </tr>
+        
+        <tr id="toc-row-17" class="sub">
+          <th><a href="#slide17">3.3 本地仓库提交到Gerrit</a></th>
+          <td><a href="#slide17">17</a></td>
+        </tr>
+        
+        <tr id="toc-row-18" class="sub">
+          <th><a href="#slide18">4. git 基本操作 练习</a></th>
+          <td><a href="#slide18">18</a></td>
         </tr>
         
       
