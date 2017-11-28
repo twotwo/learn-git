@@ -25,7 +25,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Git 协作开发上手指南</title>
+    <title>协作开发与持续集成</title>
     <!-- Styles -->
     
     <link rel="stylesheet" media="print" href="theme/css/print.css">
@@ -54,7 +54,7 @@
         <div class="slide has_notes slide-1">
           <div class="inner">
             
-            <header><h1>Git 协作开发上手指南</h1></header>
+            <header><h1>协作开发与持续集成</h1></header>
             
             
             <section><p class="notes">Generate HTML5 slideshows by landslide</p>
@@ -64,7 +64,7 @@
 <li>V1.0</li>
 <li>liyan 2017-11-15</li>
 </ul>
-<h2>从前有个工程师，想用 git …</h2>
+<h2>从前，有一枚野生的程序猿，加入了一支攻城狮团队 …</h2>
 <!-- .qr: 450|http://172.16.100.90:10000/slide/gerrit/ -->
 
 <p><img alt="QR Code" src="images/qr-code.png" /></p></section>
@@ -83,7 +83,7 @@
             </aside>
             
             <aside class="page_number">
-              1/8
+              1/9
             </aside>
           </footer>
         </div>
@@ -91,24 +91,18 @@
       
       <!-- slide source: index.md -->
       <div class="slide-wrapper">
-        <div class="slide slide-2">
+        <div class="slide has_notes slide-2">
           <div class="inner">
             
-            <header><h2>小王的工作环境</h2></header>
+            <header><h2>怎样快速成为一只合格的攻城狮呢？</h2></header>
             
             
-            <section><ul>
-<li>用一台windows开发机；</li>
-<li>用一台centos测试机；</li>
-<li>团队用Jenkins做持续集成；</li>
-<li>团队用gerrit做代码管理；</li>
-</ul>
-<h2>小王的学习路径</h2>
+            <section><p class="notes">要成为一只合格的攻城狮，小白需要掌握以下内容</p>
 <ul>
-<li>了解开发环境下这些服务都是怎样工作的 本篇文章</li>
-<li>学习如何在Windows下<a href="./git-bash.html">玩转 Git Bash</a> </li>
-<li>学习更多 gerrit 进行协同开发的知识 <a href="./gerrit.html">Gerrit 使用入门</a></li>
-<li>练习在开发机与测试机上进行同步的开发测试</li>
+<li>了解协作开发与持续集成的基本概念 本篇文章</li>
+<li>学习如何在Windows下<a href="./git-bash.html">使用 Git Bash</a> </li>
+<li>学习更多 gerrit 进行协作开发的知识 <a href="./gerrit.html">Gerrit 使用入门</a></li>
+<li>持续集成练习</li>
 </ul></section>
             
           </div>
@@ -125,7 +119,7 @@
             </aside>
             
             <aside class="page_number">
-              2/8
+              2/9
             </aside>
           </footer>
         </div>
@@ -139,7 +133,7 @@
             <header><h2>本文主要内容</h2></header>
             
             
-            <section><h3>1. 工作环境介绍</h3>
+            <section><h3>1. 环境介绍</h3>
 <h3>2. Gerrit与代码评审</h3>
 <h3>3. 持续集成的实践</h3>
 <h3>4. 总结</h3></section>
@@ -158,7 +152,7 @@
             </aside>
             
             <aside class="page_number">
-              3/8
+              3/9
             </aside>
           </footer>
         </div>
@@ -169,10 +163,16 @@
         <div class="slide slide-4">
           <div class="inner">
             
-            <header><h2>1. 工作环境介绍</h2></header>
+            <header><h2>1. 环境介绍</h2></header>
             
             
-            <section><p>持续集成环境</p>
+            <section><ul>
+<li>开发机： 攻城狮的生产工具，一般都还是安装的Windows系统</li>
+<li>测试服务器： 若干安装CentOS的服务器，用来测试服务，团队范围内公用</li>
+<li>生产服务器： 也叫业务服务器，操作要谨慎！</li>
+<li>Jenkins： 团队的CI服务器，用来支持持续集成流程；</li>
+<li>Gerrit： 团队代码仓库和代码评审平台；</li>
+</ul>
 <p><img alt="CI Overview" src="images/ci_overview.png" /></p></section>
             
           </div>
@@ -189,7 +189,7 @@
             </aside>
             
             <aside class="page_number">
-              4/8
+              4/9
             </aside>
           </footer>
         </div>
@@ -200,10 +200,10 @@
         <div class="slide slide-5">
           <div class="inner">
             
-            <header><h2>1.1 开发、测试到发布一览</h2></header>
+            <header><h2>1.1 开发流程： 从开发到发布</h2></header>
             
             
-            <section><p><img alt="ci_startup" src="images/git-ci.png" /></p></section>
+            <section><p><img alt="Jenkins Process" src="images/git-jenkins-process.png" /></p></section>
             
           </div>
           <div class="presenter_notes">
@@ -219,7 +219,7 @@
             </aside>
             
             <aside class="page_number">
-              5/8
+              5/9
             </aside>
           </footer>
         </div>
@@ -233,6 +233,11 @@
             <header><h2>2. Gerrit与代码评审</h2></header>
             
             
+            <section><ul>
+<li>Gerrit Web 控制台</li>
+<li>代码评审</li>
+</ul></section>
+            
           </div>
           <div class="presenter_notes">
             <header><h1>Presenter Notes</h1></header>
@@ -247,7 +252,7 @@
             </aside>
             
             <aside class="page_number">
-              6/8
+              6/9
             </aside>
           </footer>
         </div>
@@ -258,8 +263,13 @@
         <div class="slide slide-7">
           <div class="inner">
             
-            <header><h2>3. 持续集成实践</h2></header>
+            <header><h2>2.1 Gerrit Web 控制台</h2></header>
             
+            
+            <section><h3>登录 Web 控制台</h3>
+<p><a href="http://172.16.100.130/gerrit/">Gerrit Web Console</a> 已经集成了账号管理系统，大家可以使用自己的jira账号直接登录(Sign In)</p>
+<p>点击Gerrit 页面右上角“Sign In”链接后，出现如下登录界面</p>
+<p><img alt="Gerrit Sign In" src="images/gerrit-sign-in.png" /></p></section>
             
           </div>
           <div class="presenter_notes">
@@ -275,7 +285,7 @@
             </aside>
             
             <aside class="page_number">
-              7/8
+              7/9
             </aside>
           </footer>
         </div>
@@ -284,6 +294,36 @@
       <!-- slide source: index.md -->
       <div class="slide-wrapper">
         <div class="slide slide-8">
+          <div class="inner">
+            
+            <header><h2>3. 持续集成实践</h2></header>
+            
+            
+            <section><p>示例</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="index.md">index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              8/9
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: index.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-9">
           <div class="inner">
             
             <header><h2>4. 总结</h2></header>
@@ -303,7 +343,7 @@
             </aside>
             
             <aside class="page_number">
-              8/8
+              9/9
             </aside>
           </footer>
         </div>
@@ -318,13 +358,13 @@
       <caption>Table of Contents</caption>
       
       <tr id="toc-row-1">
-        <th><a href="#slide1">Git 协作开发上手指南</a></th>
+        <th><a href="#slide1">协作开发与持续集成</a></th>
         <td><a href="#slide1">1</a></td>
       </tr>
       
         
         <tr id="toc-row-2" class="sub">
-          <th><a href="#slide2">小王的工作环境</a></th>
+          <th><a href="#slide2">怎样快速成为一只合格的攻城狮呢？</a></th>
           <td><a href="#slide2">2</a></td>
         </tr>
         
@@ -334,12 +374,12 @@
         </tr>
         
         <tr id="toc-row-4" class="sub">
-          <th><a href="#slide4">1. 工作环境介绍</a></th>
+          <th><a href="#slide4">1. 环境介绍</a></th>
           <td><a href="#slide4">4</a></td>
         </tr>
         
         <tr id="toc-row-5" class="sub">
-          <th><a href="#slide5">1.1 开发、测试到发布一览</a></th>
+          <th><a href="#slide5">1.1 开发流程： 从开发到发布</a></th>
           <td><a href="#slide5">5</a></td>
         </tr>
         
@@ -349,13 +389,18 @@
         </tr>
         
         <tr id="toc-row-7" class="sub">
-          <th><a href="#slide7">3. 持续集成实践</a></th>
+          <th><a href="#slide7">2.1 Gerrit Web 控制台</a></th>
           <td><a href="#slide7">7</a></td>
         </tr>
         
         <tr id="toc-row-8" class="sub">
-          <th><a href="#slide8">4. 总结</a></th>
+          <th><a href="#slide8">3. 持续集成实践</a></th>
           <td><a href="#slide8">8</a></td>
+        </tr>
+        
+        <tr id="toc-row-9" class="sub">
+          <th><a href="#slide9">4. 总结</a></th>
+          <td><a href="#slide9">9</a></td>
         </tr>
         
       
