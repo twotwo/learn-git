@@ -40,14 +40,15 @@
 
 ## 1. 工作环境介绍
 
-Gerrit Overview
+持续集成环境
 
-![Gerrit Overview](images/intro-quick-central-gerrit.png)
+![CI Overview](images/ci_overview.png)
 
 ---
 
-## 1.1 本地环境一览
-![本地环境一览](images/git-ci.png)
+## 1.1 开发、测试到发布一览
+
+![ci_startup](images/git-ci.png)
 
 ---
 
