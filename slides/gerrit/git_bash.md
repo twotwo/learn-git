@@ -54,13 +54,15 @@ Git for Windows是Git官方提供的Windows版本，包括命令行和图形界�
 	![add-unix-tools-to-path](images/git-bash-add-unix-tools-to-path.png)
 
 ---
-## 1.2 Configuring the line ending conversions
+## 1.2 配置换行符为Unix风格
+.notes: Configuring the line ending conversions
 
 请选择 checkout as-is, commit Unix-style line endings
 	![checkout-and-commit-unix-style](images/git-bash-checkout-and-commit-unix-style.png)
 
 ---
-## 1.3 Configuring the terminal emulator to use the Git Bash
+## 1.3 配置终端模拟器为wondow终端
+.notes: Configuring the terminal emulator to use the Git Bash
 
 请选择 Use Windows' default console window
 	![use-windows-console](images/git-bash-use-windows-console.png)
