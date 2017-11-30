@@ -16,7 +16,7 @@
 ## 怎样快速成为一只合格的攻城狮呢？
 .notes: 要摆脱野生状态，小白需要掌握必要的工作方法
 
-* 软件开发的工作方法 //本篇文章
+* 软件开发的工作方法 //本篇文章侧重点为持续集成
 	- 持续集成
 	- 代码评审
 	- 工作日志
@@ -33,9 +33,19 @@
 ## 本文主要内容
 
 ### 1. 持续集成简介
+
 ### 2. 环境与流程
+
 ### 3. Gerrit与代码评审
-### 4. 总结
+
+### 4. 持续集成实践
+* Android项目: [渠道适配SDK](http://172.16.100.50/jenkins/job/sdk-agent-android/)
+* iOS项目: [sdk v4](http://172.16.100.65/job/sdk_v4_ios/)
+* Java项目: [渠道适配服务](http://172.16.100.50/jenkins/job/sdk-agent/)
+* Node.js项目：
+* PHP项目
+### 5. 总结
+
 
 ---
 
@@ -76,14 +86,14 @@
 
 ---
 
-## 2. Gerrit与代码评审
+## 3. Gerrit与代码评审
 
 * Gerrit Web 控制台
 * 代码评审
 
 ---
 
-## 2.1 Gerrit Web 控制台
+## 3.1 Gerrit Web 控制台
 
 ### 登录 Web 控制台
 [Gerrit Web Console](http://172.16.100.130/gerrit/) 已经集成了账号管理系统，大家可以使用自己的jira账号直接登录(Sign In)
@@ -94,13 +104,18 @@
 
 ---
 
-## 3. 持续集成实践
+## 4. 持续集成实践
 
 示例
 
+* Node.js项目部署参考
+	- https://blog.hobbytrace.com/use-jenkins-to-automatically-deploy-node-js-apps/
+	- https://codeforgeek.com/2016/04/continuous-integration-deployment-jenkins-node-js/
+	- https://blog.couchbase.com/create-continuous-deployment-pipeline-nodejs-jenkins/
+
 ---
 
-## 4. 总结
+## 5. 总结
 
 参考内容
 
